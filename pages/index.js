@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../src/components/layout/Layout'
+import Introduction from '../src/components/landing/Introductions'
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -12,7 +13,7 @@ export default function Home() {
       </Head>
 
       <Layout>
-        MAIN
+        <Introduction/>
       </Layout>
     </div>
   )

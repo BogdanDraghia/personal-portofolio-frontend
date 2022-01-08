@@ -69,9 +69,8 @@ const Header = () => {
     return (
         <nav className={style.center}>
             <div className={style.navbar}>
-                <a className={style.logo}>
-                    <Logo />
-                </a>
+               
+                   <Logo />
                 <div className={stateBurger ? `${style.openNavMenu} ${style.navMenuWrap}` : `${style.closedNavMenu} ${style.navMenuWrap}`}>
                     <ul className={`${style.navMenu} ${stateBurger ? style.color1 : style.color2}`}>
                         <li
@@ -96,7 +95,7 @@ const Header = () => {
                             {renderDropdown && (
                                 <ul className={style.dropdownItems}>
                                     <li>
-                                        Websites and apps
+                                        Projects
                                     </li>
                                     <li>
                                         Illustrations
@@ -109,9 +108,10 @@ const Header = () => {
 
                         </li>
                         <li>
-                            <Link href="/blog/test" passHref>
+                            <Link href="/blog" passHref>
                                 <div className={style.menuText}>Blog</div>
-                            </Link></li>
+                            </Link>
+                            </li>
                         <li className={"accent"}>Contact</li>
                         <li className={style.changethemeli}>
                             <div className={style.changeTheme} onClick={() => changethemeHandler()}>

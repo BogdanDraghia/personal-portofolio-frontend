@@ -4,7 +4,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 import SyntaxHighlighter from 'react-syntax-highlighter'
-
+import style from "../../src/components/blog/blogpost.module.css"
 export const getStaticPaths = async () => {
     const files = fs.readdirSync(path.join('posts'))
     const paths = files.map(filename => ({
@@ -34,7 +34,7 @@ export const getStaticPaths = async () => {
 
   const PostPage = ({ frontMatter: { title }, mdxSource }) => {
     return (
-        <div>
+        <div className={style.centerSection}>
           <h1>{title}</h1>
           <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
         </div>

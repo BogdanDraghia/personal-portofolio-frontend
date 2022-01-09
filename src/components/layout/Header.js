@@ -53,7 +53,6 @@ const Header = () => {
         setStateBurger(!stateBurger)
     }
     const changethemeHandler = () => {
-        console.log("change")
         if (changeTheme) {
             document.body.classList.remove("lightmode")
             document.body.classList.add("darkmode")

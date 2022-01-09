@@ -1,8 +1,18 @@
 
+
+
+
+
 const Footer =()=>{
+    const styleFooter = {
+        opacity:0.8,
+        textAlign:"center",
+        padding:"15px",
+        marginTop:"auto",
+    }
     return(
-        <footer>
-            Footer HERE
+        <footer style={styleFooter}>
+            Copyright © 2022 Bogdan Draghia 
         </footer>
     )
 }

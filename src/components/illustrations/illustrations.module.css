@@ -1,0 +1,112 @@
+.center{
+    margin: 0 auto;
+    max-width: calc(100% - 5em);
+    width: 70em;
+}
+
+/* ITEM SECTION */
+
+.IllustrationsGrid{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.IllustrationItem{
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin: 15px;
+}
+/* OVERLAY SECTION */
+
+.IllustrationOverlay{
+      
+    position: fixed;
+        width: 100%;
+    height: 100%;
+    top: 0px;
+    padding: 20px;
+    left: 0px;
+    background-color: #a2a2a2;
+    display: flex;
+    z-index: 3;
+    align-items: center;
+    flex-direction: column;
+}
+.illustrationMock{
+    background-color: red;
+    width: 200px;
+    height: 200px;
+}
+.close{
+    background-color: blue;
+    width: 100px;
+    height: 100px;
+}
+.overlayContent{
+    background-color: white;
+
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+    margin-top: 40px;
+    max-width: 500px;
+    padding: 40px 50px;
+}
+.palette{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.paletteBox{
+    font-size: 14px;
+    margin: 1em 0.5em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.colorBox{
+    width: 60px;
+    border-radius: 10px;
+    height: 60px;
+    flex-direction: column;
+}
+.closeHelperContainer{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    z-index: 300;
+    top: 0;
+    right: 0;
+    align-items: center;
+}
+.closeHelperCross{
+    display: flex;
+    justify-content: center;
+}
+.closeHelperCross>*{
+    pointer-events: none;
+    width: 20px;
+    position: absolute;
+    display: block;
+    height: 5px;
+    background-color: var(--Accent);
+
+}
+.helperOpen{
+    pointer-events: none;
+    z-index: 1;
+    display: flex;
+    position: absolute;
+    right: 0;
+    margin: 10px;
+}
+.helperOpen>*{
+    width: 7px;
+    border-radius: 50%;
+    margin: 2px;
+    height: 7px;
+    background-color: #efe7da;
+}

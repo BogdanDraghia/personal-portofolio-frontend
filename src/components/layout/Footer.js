@@ -1,8 +1,3 @@
-
-
-
-
-
 const Footer =()=>{
     const styleFooter = {
         opacity:0.8,

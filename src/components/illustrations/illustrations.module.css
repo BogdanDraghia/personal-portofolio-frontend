@@ -45,17 +45,15 @@
     height: 100px;
 }
 .overlayContent{
-    background-color: white;
-
-    width: 100%;
-    border-radius: 10px;
     position: relative;
-    margin-top: 40px;
-    max-width: 500px;
-    padding: 40px 50px;
+    max-width:100%; 
+    max-height:100%;
+    background-color: white;
+    padding:40px 35px 15px;
+    margin:auto; 
+    border-radius: 10px;
 }
 .palette{
-    margin-top: 20px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -68,10 +66,11 @@
     flex-direction: column;
 }
 .colorBox{
-    width: 60px;
-    border-radius: 10px;
     height: 60px;
-    flex-direction: column;
+    width: 60px;
+    text-align: center;
+    margin:5px;
+    border-radius: 5px;
 }
 .closeHelperContainer{
     position: absolute;
@@ -83,6 +82,9 @@
     align-items: center;
 }
 .closeHelperCross{
+    position: absolute;
+    top:20px;
+    right:20px;
     display: flex;
     justify-content: center;
 }

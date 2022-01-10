@@ -1,0 +1,44 @@
+[
+    {
+       "id":1,
+       "name":"dog",
+       "dominantColor":"6aa7e8",
+
+       "pallete":[
+          "#6aa7e8",
+          "#6aa7e8",
+          "#6aa7e8",
+          "#6aa7e8"
+       ],
+       "date":"12/05/2020"
+    },
+    {
+       "id":2,
+       "name":"dog2",
+       "dominantColor":"#6aa7e8",
+       "pallete":[
+          "#6aa7e8",
+          "#6aa7e8",
+          "#6aa7e8",
+          "#6aa7e8"
+       ],
+       "date":"12/05/2020"
+    },
+    {
+       "id":3,
+       "name":"dog3",
+       "pallete":[
+          "#6aa7e8",
+          "#6aa7e8",
+          "#6aa7e8",
+          "#6aa7e8"
+       ],
+       "dominantColor":"#6aa7e8",
+       "metadata":[
+          "dog",
+          "multiple"
+       ],
+       "date":"12/05/2020"
+    }
+
+ ]

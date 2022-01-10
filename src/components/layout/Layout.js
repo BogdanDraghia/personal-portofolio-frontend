@@ -1,10 +1,10 @@
 import Header from "./Header"
 import Footer from "./Footer"
-import style from './layout.module.css'
+import styles from './layout.module.css'
 
 const Layout = ({children})=>{
     return (
-    <div className={style.expand}>
+    <div>
         <Header/>
             <main>
                 {children}

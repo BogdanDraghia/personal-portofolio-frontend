@@ -96,6 +96,7 @@ const Header = () => {
                                     <li>
                                         Projects
                                     </li>
+<<<<<<< HEAD
                                     <Link href="/illustrations" passHref>
                                     <li>
                                         Illustrations
@@ -103,6 +104,11 @@ const Header = () => {
                                     </li>
                                     </Link>
                                         
+=======
+                                    <li>
+                                        Illustrations
+                                    </li>
+>>>>>>> ccd4ae7ace1cb8b0e05241fc237367e7065fb9ec
                                     <li>
                                         Others
                                     </li>

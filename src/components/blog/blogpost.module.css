@@ -1,0 +1,6 @@
+.centerSection{
+    margin: 0 auto;
+    max-width: calc(100% - 5em);
+    width: 70em;
+
+}

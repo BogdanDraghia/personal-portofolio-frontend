@@ -96,9 +96,13 @@ const Header = () => {
                                     <li>
                                         Projects
                                     </li>
+                                    <Link href="/illustrations" passHref>
                                     <li>
                                         Illustrations
+                                    
                                     </li>
+                                    </Link>
+                                        
                                     <li>
                                         Others
                                     </li>

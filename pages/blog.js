@@ -72,21 +72,3 @@ export const getStaticProps = async () => {
       }
     }
   }
-
-<<<<<<< HEAD
-=======
-// {/* 
-// {posts.map((post,index)=>(
-//                 <div key={index}>
-//                     <BlogItemLast description={post.frontMatter.description}/>
-//                     {post.frontMatter.title}
-//                 </div>
-//             ))}   
-//         </div> 
-        
-        
-//         */
-    
-    
-//     }
->>>>>>> ccd4ae7ace1cb8b0e05241fc237367e7065fb9ec

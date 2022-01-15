@@ -93,9 +93,11 @@ const Header = () => {
                             </div>
                             {renderDropdown && (
                                 <ul className={style.dropdownItems}>
+                                    <Link href="/projects" passHref>
                                     <li>
                                         Projects
                                     </li>
+                                    </Link>
                                     <Link href="/illustrations" passHref>
                                     <li>
                                         Illustrations

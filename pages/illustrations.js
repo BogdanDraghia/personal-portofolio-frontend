@@ -40,7 +40,7 @@ const IllustrationOverlay = (props)=>{
             exit={{ opacity: 0 }}
             className={`${style.IllustrationOverlay} close`}  style={{backgroundColor:hex2rgba(props.data.dominantColor,0.8)}} data="close" onClick={(e)=>{closeOverlay(e)}}>
                 <div className={style.overlayContent}>
-                    <div className={style.closeHelperContainer}>
+                    <div className={style.closeHelperContainer} data="close">
                         <div className={style.closeHelperCross}>
                             <div style={{transform:"rotate(45deg)"}}></div>
                             <div style={{transform:"rotate(-45deg)"}}></div>

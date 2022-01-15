@@ -97,14 +97,16 @@ const Header = () => {
                                     <li>
                                         Projects
                                     </li>
-                                    </Link>
                                     <Link href="/illustrations" passHref>
                                     <li>
                                         Illustrations
                                     
                                     </li>
                                     </Link>
-                                        
+
+                                    <li>
+                                        Illustrations
+                                    </li>
                                     <li>
                                         Others
                                     </li>

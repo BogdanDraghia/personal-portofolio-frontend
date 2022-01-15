@@ -97,6 +97,7 @@ const Header = () => {
                                     <li>
                                         Projects
                                     </li>
+                                    </Link>
                                     <Link href="/illustrations" passHref>
                                     <li>
                                         Illustrations

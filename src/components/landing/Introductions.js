@@ -7,22 +7,22 @@ import Github from "../../props/icons/github"
 import Instagram from "../../props/icons/instagram"
 import Linkedin from "../../props/icons/linkedin"
 
-
+import { motion } from "framer-motion";
 const IconShortcut = ({name,icon,pass})=>{
 
     return( 
-    <a className={style.ShortcutItem} href={pass} >
+    <motion.a whileHover={{ scale: 1.1 }} className={style.ShortcutItem} href={pass} >
             {icon}
-    </a>
+    </motion.a>
     
     )
 }
 
 const Button = ({text,fill,colortxt})=>{
     return(
-        <div className={style.button} style={{backgroundColor:fill, color:colortxt}}>
+        <motion.div whileHover={text != "Contact" ?{ scale: 1.1 }:""} className={style.button} style={{backgroundColor:fill, color:colortxt}}>
             {text}
-        </div>
+        </motion.div>
     )
 }
 

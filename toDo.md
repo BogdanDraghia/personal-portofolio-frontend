@@ -1,9 +1,15 @@
 The idea for the site to create a space that i can showcase my work, obtain offers for work and blog what I did, tutorials, documentation for tools that i create 
 
-This way I can express my self easy 
 
 The stack of the website was a long run decision, from jeklyn and runned on githubpage to gatsby, and finally i had the decision to take the path of next js, you should be asking, but why ? 
 Only one word changed me to use from gatsby to next, excalability, because in the future i wish that I offer courses for majority of people that like were self taught, and offer the peak of my vision regardles of what I wanted to create, so with gatsby you need to teak a lot of things, and If start with a wrong direction it will cost alot of effort to change it 
+
+Add CSM interface with strapi/ netlify and offer it like 
+
+Each day push some code
+
+
+- FEB 11 ✅ 
 
 
 General 
@@ -11,6 +17,7 @@ General
 
 Landing Page 
     Bugs
+        - [] Animate icons on hover
         - [] Redirect icons to real websites
         - [] Click effect on "My work button
     Responsive 
@@ -36,4 +43,7 @@ Projects
       Laptop
     
 
+Project page
+Add tags 
+add 
 `

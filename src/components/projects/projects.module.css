@@ -53,3 +53,21 @@
 .pItemLinks{
     margin: 20px 10px;
 }
+
+@media (max-width: 425px) {
+
+    .projectContainer{
+        width: 100%;
+        max-width: initial;
+    }
+    .projectItemPhoto{
+        border-radius: 20px 20px 0px 0px;
+
+    }
+    .projectItem{
+        width: initial;
+        padding: 0px;
+        margin:20px 20px;
+        flex-direction: column;
+    }
+}

@@ -16,7 +16,6 @@ const Tag = (props)=>{
 
 const ProjectItem = ()=>{
     return(
- 
             <div className={style.projectItem}>
                 <div className={style.projectItemPhoto}>
                 <Image src="/images/blog/3.png" width="500px" height="500px" objectFit="cover" alt="profile"/>

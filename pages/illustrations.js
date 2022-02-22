@@ -44,7 +44,6 @@ const IllustrationOverlay = (props)=>{
                         <div className={style.closeHelperCross}>
                             <div style={{transform:"rotate(45deg)"}}></div>
                             <div style={{transform:"rotate(-45deg)"}}></div>
-
                         </div>
                     </div>
                     <div className={style.imageOverlay}>

@@ -40,6 +40,7 @@
 }
 /* ITEM INFO  */
 .pItemTags{
+    margin:10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
@@ -50,8 +51,33 @@
     padding: 5px 10px;
     border-radius: 10px;
 }
+
 .pItemLinks{
-    margin: 20px 10px;
+    display: flex;  
+}
+.pItemLinks div:nth-child(2){
+    margin-left: 20px;
+}
+.tagBoxFilter{
+    cursor:pointer;
+    position: relative;
+    margin: 5px;
+    
+    font-size: 18px;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+.filterSection{
+    font-size:28px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.filterSectionContainer{
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 @media (max-width: 425px) {

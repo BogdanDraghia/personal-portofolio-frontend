@@ -6,7 +6,7 @@ import Cv from "../../props/icons/cv"
 import Github from "../../props/icons/github"
 import Instagram from "../../props/icons/instagram"
 import Linkedin from "../../props/icons/linkedin"
-
+import Button from "../assets/Button"
 import { motion } from "framer-motion";
 const IconShortcut = ({name,icon,pass})=>{
 
@@ -18,13 +18,6 @@ const IconShortcut = ({name,icon,pass})=>{
     )
 }
 
-const Button = ({text,fill,colortxt})=>{
-    return(
-        <motion.div whileHover={text != "Contact" ?{ scale: 1.1 }:""} className={style.button} style={{backgroundColor:fill, color:colortxt}}>
-            {text}
-        </motion.div>
-    )
-}
 
 const Introduction = () => {
 
@@ -39,7 +32,7 @@ const Introduction = () => {
                     <p>I want to share the knowledge that I have acquired so far and I am willing to learn many new things.</p>
                     <div className={style.buttonGroup}>
                         <Button text="My work" fill="var(--Accent)" colortxt="white"/>
-                        <Button text="Contact" colortxt="var(--Accent)"/>
+                        <Button text="Contact" hover={false} colortxt="var(--Accent)"/>
                     </div>
             </div>
             <div className={style.PhotoSection}>

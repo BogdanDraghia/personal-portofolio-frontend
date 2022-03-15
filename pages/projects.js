@@ -7,13 +7,9 @@ let projectData = require("../src/data/projects-data.json")
 
 let tagList=projectData[0].tagsList
 
-
-
-
 const Projects = ()=>{
     const [activeFilter,setActiveFilter] = useState([])
     const [searchDesc,setSearchDesc] = useState("")
-
     const onChangeFilter=(dataElem)=>{
         console.log(dataElem)
         const index = activeFilter.findIndex((name) => name === dataElem);
@@ -29,18 +25,15 @@ const Projects = ()=>{
         console.log(activeFilter)
     }
     const filterOpt = projectData.slice(1).filter(project => {
-                        
         if(activeFilter.length ===0 ) return project
         if(activeFilter.some(val=>project.tags.includes(val)))
         return project
     }).filter(project=>project.description.toLowerCase().includes(searchDesc.toLowerCase()))
     const handleSearchChange = ({ target }) => setSearchDesc(target.value);
     return(
-        
             <div className={style.projectContainer}>
                 <h1>Projects</h1>
-            <div className={style.filterSectionContainer}>
-                
+            <div className={style.filterSectionContainer}>     
             <div className={style.filterSection}>
             <input onChange={handleSearchChange} value={searchDesc} type="text" />
             {Object.keys(tagList).map((name,index)=>(
@@ -49,8 +42,6 @@ const Projects = ()=>{
             </div>
         </div>
                 <AnimatePresence>
-
-
                 {
                     filterOpt.length> 0 ? filterOpt.map((data,index)=>(
                         <ProjectItem data={data} key={index}/>
@@ -123,50 +114,3 @@ const ProjectItem = ({data})=>{
     )
 }
 
-
-// const ProjectItem = ()=>{
-//     return(
-//             <div className={style.projectItem}>
-//                 <div className={style.projectItemPhoto}>
-//                 <Image src="/images/blog/3.png" width="500px" height="500px" objectFit="cover" alt="profile"/>
-//                 </div>
-//                 <div className={style.projectItemInfo}>
-//                     <div className={style.pItemTittle}>
-//                         <h2>Title project</h2>
-//                     </div>
-//                     <div className={style.pItemDescription}>
-//                         <p>
-//                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-//                         </p>
-//                     </div>
-//                     <div className={style.pItemTags}>
-//                         <Tag tag={"gatsby"} />
-//                         <Tag tag={"gatsby"} />
-//                     </div>
-//                     <div className={style.pItemLinks}>
-//                     <Button text="Source" fill="#f2f2f2" colortxt={"black"}/>
-//                     <Button text="Demo" fill="#f2f2f2" colortxt={"black"}/>
-//                     </div>
-//                 </div>
-//             </div>
-
-//     )
-// }
-
-
-// const Projects = ()=>{
-//     return(
-//         <div className={style.projectContainer}>
-//             <div>
-//                 Project filter
-//             </div>
-//             <div className={style.projectContainer}>
-                
-//                 <ProjectItem/>
-//                 <ProjectItem/>
-//                 <ProjectItem/>
-//             </div>
-//         </div>
-//     )
-// }
-// export default Projects

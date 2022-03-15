@@ -21,8 +21,6 @@ const Header = () => {
     const [changeTheme, setChangeTheme] = useState(false)
     const [renderDropdown, setRenderDropdown] = useState(false)
     const [stateBurger, setStateBurger] = useState(false)
-
-
     // FUNCTIONS
     useEffect(() => {
         const clickedOut = (e) => {
@@ -68,8 +66,8 @@ const Header = () => {
     return (
         <nav className={style.center}>
             <div className={style.navbar}>
-               
-                   <Logo />
+
+                <Logo />
                 <div className={stateBurger ? `${style.openNavMenu} ${style.navMenuWrap}` : `${style.closedNavMenu} ${style.navMenuWrap}`}>
                     <ul className={`${style.navMenu} ${stateBurger ? style.color1 : style.color2}`}>
                         <li
@@ -94,33 +92,30 @@ const Header = () => {
                             {renderDropdown && (
                                 <ul className={style.dropdownItems}>
                                     <Link href="/projects" passHref>
-                                    <li>
-                                        Projects
-                                    </li>
+                                        <li onClick={() => toggleButtonBurger()}>
+                                            Projects
+                                        </li>
                                     </Link>
                                     <Link href="/illustrations" passHref>
-                                    <li>
-                                        Illustrations
-                                    
-                                    </li>
-                                    </Link>
+                                        <li  onClick={() => toggleButtonBurger()} >
+                                            Illustrations
 
-                                    <li>
-                                        Illustrations
-                                    </li>
-                                    <li>
+                                        </li>
+                                    </Link>
+                                    <li  onClick={() => toggleButtonBurger()}>
                                         Others
                                     </li>
                                 </ul>
                             )}
-
                         </li>
-                        <li>
-                            <Link href="/blog" passHref>
+                        <li  onClick={() => toggleButtonBurger()}>
+                            <Link href="/blog" passHref >
                                 <div className={style.menuText}>Blog</div>
                             </Link>
-                            </li>
-                        <li className={"accent"}>Contact</li>
+                        </li>
+                        <li className={"accent"}
+                         onClick={() => toggleButtonBurger()}
+                        ><Link href="/contact">Contact</Link></li>
                         <li className={style.changethemeli}>
                             <div className={style.changeTheme} onClick={() => changethemeHandler()}>
                                 <motion.div

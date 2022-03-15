@@ -1,0 +1,11 @@
+.centerSection{
+    margin: 0 auto;
+    max-width: calc(100% - 5em);
+    width: 70em;
+}
+
+.containerContact{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;}

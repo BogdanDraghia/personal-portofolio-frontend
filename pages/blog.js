@@ -5,6 +5,7 @@ import matter from 'gray-matter';
 import Image from "next/image"
 import style from "../src/components/blog/blog.module.css"
 import Link from "next/link"
+import {motion} from "framer-motion"
 const BlogItemLast = ({dataPost})=>{
     return(
         <Link href={'/blog/' + dataPost.slug} passHref>
@@ -24,7 +25,9 @@ const BlogItemLast = ({dataPost})=>{
 const BlogItem = ({dataPost})=>{
     return(
         <Link href={'/blog/' + dataPost.slug}  passHref>
-            <a className={style.blogItem}>
+            <motion.a 
+            whileHover={{scale:1.02}}
+            className={style.blogItem}>
             <div className={style.blogItemImage}>
                 <Image src={dataPost.frontMatter.thumbnailUrl} width="400px" height="300px" objectFit="cover" alt="profile"/>
             </div>
@@ -32,7 +35,7 @@ const BlogItem = ({dataPost})=>{
                 <h1>{dataPost.frontMatter.title}</h1>
                 <p>{dataPost.frontMatter.description}</p>
             </div>
-            </a>
+            </motion.a>
         </Link>
     )
 }

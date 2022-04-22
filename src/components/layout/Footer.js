@@ -1,3 +1,5 @@
+import style from "./layout.module.css"
+
 const Footer =()=>{
     const styleFooter = {
         opacity:0.8,
@@ -6,7 +8,7 @@ const Footer =()=>{
         marginTop:"auto",
     }
     return(
-        <footer style={styleFooter}>
+        <footer className={style.footerSection}>
             Copyright © 2022 Bogdan Draghia 
         </footer>
     )

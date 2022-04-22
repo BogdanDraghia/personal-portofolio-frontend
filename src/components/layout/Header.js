@@ -4,6 +4,7 @@ import Moon from "../../props/images/moon"
 import Logo from "../../props/images/logo"
 import Link from 'next/link'
 import style from "./layout.module.css"
+
 const Header = () => {
     const ref = useRef()
     const variants = {

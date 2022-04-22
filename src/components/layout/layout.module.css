@@ -18,6 +18,9 @@
   }
   
   .navbar {
+    max-width: calc(100% - 5em);
+    width: 70em;
+    margin: 0 auto;
     position: relative;
     justify-content: space-between;
     align-items: center;
@@ -180,7 +183,16 @@
   
   /* FOOTER */
   
-  /* OTHER */
+  .footerSection{
+    opacity:0.8;
+    text-align:center;
+    padding:15px;
+    margin-top:auto;
+    color:var(--txt-default);
+  }
+
+
+  /* OTHER */x
   .center {
     margin: 0 auto;
     max-width: calc(100% - 5em);
@@ -272,3 +284,4 @@
       display: none;
     }
   }
+

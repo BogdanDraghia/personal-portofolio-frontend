@@ -1,9 +1,19 @@
 [
    {
       "tagsList":{
-         "python":"#F25F5C",
-         "react":"#70C1B3",
-         "docker":"#247BA0"
+         "python":{
+            "color":"#F25F5C",
+            "checked":false
+         },
+         "react":
+         {
+            "color":"#70C1B3",
+            "checked":false
+         },
+         "docker":{
+            "color":"#E072A4",
+            "checked":false
+         }
       }
    },
    {
@@ -25,7 +35,7 @@
       "name": "Project2",
       "description": "   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut bogdan labore et dolore magna aliqua.",
       "tags": [
-         "react"
+         "react"  
       ],
       "links": 
          {
@@ -37,7 +47,7 @@
    {
       "id": 3,
       "name": "Project3",
-      "description": "   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. bogdan",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. bogdan",
       "tags": [
          "docker"
       ],

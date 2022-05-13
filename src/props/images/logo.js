@@ -6,9 +6,7 @@ const Logo = () => {
         <Link href="/" passHref>
         <div className={style.LogoContainer}>
             <div className={style.LogoIcon}>
-                <div className={`${style.LogoCircle}  ${style.LightLogo}`}
-                >
-
+                <div className={`${style.LogoCircle}  ${style.LightLogo}`}>
                 </div>
             </div>
             <div className={style.LogoText}>Bogdan</div>

@@ -13,6 +13,7 @@
     flex-wrap: wrap;
 }
 .IllustrationItem{
+    cursor:pointer;
     position: relative;
     overflow: hidden;
     border-radius: 15px;
@@ -66,6 +67,7 @@
     flex-direction: column;
 }
 .colorBox{
+    cursor: pointer;
     height: 60px;
     width: 60px;
     text-align: center;
@@ -82,6 +84,7 @@
     align-items: center;
 }
 .closeHelperCross{
+    cursor: pointer;
     position: absolute;
     top:20px;
     right:20px;
@@ -111,4 +114,28 @@
     margin: 2px;
     height: 7px;
     background-color: #efe7da;
+}
+.notificationContainer{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    box-shadow: var(--box-shadow);
+    bottom: 0;
+    text-align: center;
+    z-index: 1000;
+}
+.imageOverlay{
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+.notification{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:20px;
+    height: 50px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #f2f2f2;
 }

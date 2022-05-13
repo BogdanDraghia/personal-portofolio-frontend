@@ -6,6 +6,8 @@ import { motion, AnimatePresence } from "framer-motion"
 let IllustrationsData = require("../src/data/illustrations-data.json")
 
 
+
+
 const IllustrationItem = (props)=>{
     return (
         <div className={style.IllustrationItem} index={props.id} onClick={()=>{props.handleOverlay(props.id)}}>
@@ -20,7 +22,14 @@ const IllustrationItem = (props)=>{
 }
 
 const IllustrationOverlay = (props)=>{
-    console.log(props)
+
+        const [copynotification,setCopyNotification] = useState(false)
+    const copyColor = (elem)=>{
+        navigator.clipboard.writeText(elem)
+        setCopyNotification(true)
+        const timer = setTimeout(() => setCopyNotification(false), 1500);
+        
+    }
 
     const closeOverlay=(e)=>{
         if(e.target.getAttribute('data')){
@@ -47,15 +56,38 @@ const IllustrationOverlay = (props)=>{
                         </div>
                     </div>
                     <div className={style.imageOverlay}>
+                        <AnimatePresence>
+                            {
+                            copynotification && (
+                                <motion.div 
+                                initial={{opacity:0}}
+                                animate={{y:-10,opacity:1}}
+                                exit={{opacity:0}}
+                                transition={{
+                                    duration: 1,
+                                    type: "spring",
+                                  }}
+                                className={style.notificationContainer}>
+                                    <div className={style.notification}>
+                                    Color copied to the clipboard !
+                                    </div>
+                                </motion.div>
+                                )
+                            }
+                           
+                        </AnimatePresence>
                         <Image src={"/images/illustrations/dog.jpg"}   width="400px" height="400px" objectFit="cover" alt="profile" />
-
                     </div>
                     <div className={style.palette}>
                         {props.data.pallete.map((item,index)=>(
                             <motion.div 
+
                             className={style.paletteBox}
                             whileHover={{ scale: 1.1 }}
                             whileTap={{ scale: 0.95 }}
+                            onClick={()=>{
+                                copyColor(item)
+                            }}
                             key={index}>
                                 <div className={style.colorBox} style={{backgroundColor:item}} ></div>
                                 <div className={style.colorCode}>{item}</div>

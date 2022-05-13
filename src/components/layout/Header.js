@@ -100,7 +100,6 @@ const Header = () => {
                                     <Link href="/illustrations" passHref>
                                         <li  onClick={() => toggleButtonBurger()} >
                                             Illustrations
-
                                         </li>
                                     </Link>
                                     <li  onClick={() => toggleButtonBurger()}>
@@ -109,14 +108,15 @@ const Header = () => {
                                 </ul>
                             )}
                         </li>
-                        <li  onClick={() => toggleButtonBurger()}>
+                        <li
+                         onClick={() => toggleButtonBurger()}>
                             <Link href="/blog" passHref >
-                                <div className={style.menuText}>Blog</div>
+                                <div style={{color:"#6aa7e8"}} className={style.menuText}>Blog</div>
                             </Link>
                         </li>
-                        <li className={"accent"}
+                        {/* <li 
                          onClick={() => toggleButtonBurger()}
-                        ><Link href="/contact">Contact</Link></li>
+                        ><Link href="/contact">Contact</Link></li> */}
                         <li className={style.changethemeli}>
                             <div className={style.changeTheme} onClick={() => changethemeHandler()}>
                                 <motion.div

@@ -58,9 +58,6 @@ const Projects = () => {
             <input
               className={style.searchInputContainerTmp}
               onChange={handleSearchChange} value={searchDesc} type="text" />
-            {/* <div className={style.resetButtonContainer}>
-            <Image objectFit="cover" width="50px" height="50px" src={SearchSvg} alt="Search" />
-            </div> */}
           </div>
 
           
@@ -110,7 +107,7 @@ const ProjectItem = ({ data }) => {
       exit={{ opacity: 0 }}
       className={style.projectItem}>
       <div className={style.projectItemPhoto}>
-        <Image src="/images/blog/3.png" width="500px" height="500px" objectFit="cover" alt="profile" />
+        <Image src="/images/blog/3.png" className={style.projectItemPhotoClass} layout="fill"  alt="profile" />
       </div>
       <div className={style.projectItemInfo}>
         <div className={style.pItemTittle}>
@@ -118,7 +115,7 @@ const ProjectItem = ({ data }) => {
         </div>
         <div className={style.pItemDescription}>
           <p>
-            {data.description}
+            {data.description.length > 100 ? (<div>{data.description.slice(0,data.description.lastIndexOf(" "))+"..."}</div>):(<div>{data.description.length}</div>)}
           </p>
         </div>
         <div className={style.pItemTags}>

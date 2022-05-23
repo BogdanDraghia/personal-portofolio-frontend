@@ -16,7 +16,10 @@
     cursor:pointer;
     position: relative;
     overflow: hidden;
+    width: 300px;
+    height: 300px;
     border-radius: 15px;
+    background-color: #f2f2f2;
     margin: 15px;
 }
 /* OVERLAY SECTION */

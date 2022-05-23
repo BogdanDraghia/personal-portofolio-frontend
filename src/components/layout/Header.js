@@ -19,10 +19,12 @@ const Header = () => {
         up: { rotate: 40 },
         down: { rotate: 0 }
     }
+    
     const [changeTheme, setChangeTheme] = useState(false)
     const [renderDropdown, setRenderDropdown] = useState(false)
     const [stateBurger, setStateBurger] = useState(false)
     // FUNCTIONS
+
     useEffect(() => {
         const clickedOut = (e) => {
             if (renderDropdown && ref.current && !ref.current.contains(e.target)) {

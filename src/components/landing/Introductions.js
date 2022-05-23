@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 const IconShortcut = ({name,icon,pass})=>{
 
     return( 
-    <motion.a whileHover={{ scale: 1.1 }} className={style.ShortcutItem} href={pass} >
+    <motion.a whileHover={{ scale: 1.1 }} target="_blank" className={style.ShortcutItem} href={pass} >
             {icon}
     </motion.a>
     
@@ -20,8 +20,6 @@ const IconShortcut = ({name,icon,pass})=>{
 
 
 const Introduction = () => {
-
-    const linkGithub = "https://www.google.com/"
 
     return (
     <div className={style.Wrap}>
@@ -37,14 +35,18 @@ const Introduction = () => {
             </div>
             <div className={style.PhotoSection}>
                 <div className={style.subPhotoSection}>
-                    <div className={style.ImageMock} >
+                    <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className={style.ImageMock} >
                         <Image  src={"/profile.jpg"}  alt="bogdandraghia"  width="100%"  objectFit="cover" height="100%" layout="responsive"/>
-                    </div>
+                    </motion.div>
                     <div className={style.IconShortcutContainer}>
-                            <IconShortcut name="cv" icon={<Cv width="60px" height="60px" />} pass={linkGithub}/>
-                            <IconShortcut name="github" icon={<Github width="60px" height="60px" />} pass={linkGithub}/>
-                            <IconShortcut name="github" icon={<Instagram width="60px" height="60px" />} pass={linkGithub}/>
-                            <IconShortcut name="github" icon={<Linkedin width="60px" height="60px" />} pass={linkGithub}/>
+                            <IconShortcut name="cv" icon={<Cv width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>
+                            <IconShortcut name="github" icon={<Github width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>
+                            <IconShortcut name="github" icon={<Instagram width="60px" height="60px" />} pass={"https://www.linkedin.com/in/bogdandraghia"}/>
+                            <IconShortcut name="github" icon={<Linkedin width="60px" height="60px" />} pass={"https://www.linkedin.com/in/bogdandraghia/"}/>
                     </div>
                 </div>
             </div>

@@ -18,7 +18,7 @@ const IllustrationItem = (props)=>{
                 <div ></div>
                 <div ></div>
             </div>
-            <Image src={"/images/illustrations/dog.jpg"}   width="300px" height="300px" objectFit="cover" alt="profile" />
+            <Image src={"/images/illustrations/dog.jpg"}   width="300px" height="300" objectFit="cover" alt="profile" />
         </motion.div>
     )
 }

@@ -112,6 +112,12 @@ const Header = () => {
                         </li>
                         <li
                          onClick={() => toggleButtonBurger()}>
+                            <Link href="/courses" passHref >
+                                <div  className={style.menuText}>Courses</div>
+                            </Link>
+                        </li>                        
+                        <li
+                         onClick={() => toggleButtonBurger()}>
                             <Link href="/blog" passHref >
                                 <div style={{color:"#6aa7e8"}} className={style.menuText}>Blog</div>
                             </Link>

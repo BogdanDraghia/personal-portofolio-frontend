@@ -130,7 +130,6 @@
 .imageOverlay{
     position: relative;
     width: 100%;
-    height: 400px;
 }
 .notification{
     display: flex;
@@ -141,4 +140,20 @@
     padding: 20px;
     border-radius: 15px;
     background-color: #f2f2f2;
+}
+
+@media (max-width: 720px) {
+
+    .IllustrationItem{
+        height:100%;
+    }
+}
+@media (max-width: 425px){
+    .palette{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .paletteBox{
+        margin:2px;
+    }
 }

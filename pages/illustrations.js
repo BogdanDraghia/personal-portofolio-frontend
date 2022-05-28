@@ -1,11 +1,9 @@
 import style from "../src/components/illustrations/illustrations.module.css"
 import Image from "next/image"
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 let IllustrationsData = require("../src/data/illustrations-data.json")
-
-
 
 
 const IllustrationItem = (props)=>{
@@ -106,9 +104,6 @@ const IllustrationOverlay = (props)=>{
     )
 }
 
-
-
-
 const Illustrations = ({illustrations})=>{
     const [isOpen, setIsOpen] = useState(false)
     const [currentItemData, setCurrentItemData] = useState(undefined)
@@ -116,6 +111,19 @@ const Illustrations = ({illustrations})=>{
         setCurrentItemData(illustrations[index-1])
         setIsOpen(!isOpen)
     }
+    
+    const handleOverlayCloseWithEsc= ()=>{
+        setIsOpen(false)
+    }
+    useEffect(() => {
+        document.addEventListener("keydown", handleOverlayCloseWithEsc, false);
+    
+        return () => {
+          document.removeEventListener("keydown", handleOverlayCloseWithEsc, false);
+        };
+      }, []);
+    
+
     return( 
         <div className={style.center}>
             <div className={style.IllustrationsGrid}>

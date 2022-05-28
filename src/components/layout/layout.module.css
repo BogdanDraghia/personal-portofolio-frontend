@@ -126,7 +126,6 @@
   }
   .burgerMenu{
     display: none;
-  
   }
   .burgerLine{
     display: block;
@@ -242,7 +241,6 @@
       display: flex;
     }
     .burgerMenu{
-      margin-right: 20px;
       display: flex;
       justify-content: center;
       align-items: center;

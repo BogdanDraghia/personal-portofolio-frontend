@@ -1,23 +1,25 @@
 import style from "../src/components/illustrations/illustrations.module.css"
 import Image from "next/image"
-import {useState} from "react"
+import {useState,useEffect} from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 let IllustrationsData = require("../src/data/illustrations-data.json")
 
 
-
-
 const IllustrationItem = (props)=>{
     return (
-        <div className={style.IllustrationItem} index={props.id} onClick={()=>{props.handleOverlay(props.id)}}>
+        <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className={style.IllustrationItem} index={props.id} onClick={()=>{props.handleOverlay(props.id)}}>
             <div className={style.helperOpen}>
                 <div ></div>
                 <div ></div>
                 <div ></div>
             </div>
-            <Image src={"/images/illustrations/dog.jpg"}   width="300px" height="300px" objectFit="cover" alt="profile" />
-        </div>
+            <Image src={"/images/illustrations/dog.jpg"}   width="300px" height="300" objectFit="cover" alt="profile" />
+        </motion.div>
     )
 }
 
@@ -27,7 +29,7 @@ const IllustrationOverlay = (props)=>{
     const copyColor = (elem)=>{
         navigator.clipboard.writeText(elem)
         setCopyNotification(true)
-        const timer = setTimeout(() => setCopyNotification(false), 1500);
+        setTimeout(() => setCopyNotification(false), 1500);
         
     }
 
@@ -102,20 +104,30 @@ const IllustrationOverlay = (props)=>{
     )
 }
 
-
-
-
-const Illustrations = ()=>{
+const Illustrations = ({illustrations})=>{
     const [isOpen, setIsOpen] = useState(false)
     const [currentItemData, setCurrentItemData] = useState(undefined)
     const handleOverlay= (index) =>{
-        setCurrentItemData(IllustrationsData[index-1])
+        setCurrentItemData(illustrations[index-1])
         setIsOpen(!isOpen)
     }
+    
+    const handleOverlayCloseWithEsc= ()=>{
+        setIsOpen(false)
+    }
+    useEffect(() => {
+        document.addEventListener("keydown", handleOverlayCloseWithEsc, false);
+    
+        return () => {
+          document.removeEventListener("keydown", handleOverlayCloseWithEsc, false);
+        };
+      }, []);
+    
+
     return( 
         <div className={style.center}>
             <div className={style.IllustrationsGrid}>
-                {IllustrationsData.map((data,index)=>(
+                {illustrations.map((data,index)=>(
                     <IllustrationItem 
                     handleOverlay={handleOverlay} id={data.id} key={index}>
                         {data.name}
@@ -126,4 +138,15 @@ const Illustrations = ()=>{
         </div>
     )
 }
+
+export async function getStaticProps() {
+    const res = IllustrationsData
+    return {
+      props: {
+        illustrations:res,
+      },
+    }
+  }
+
+  
 export default Illustrations

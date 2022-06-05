@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react"
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import Moon from "../../props/images/moon"
 import Logo from "../../props/images/logo"
 import Link from 'next/link'
@@ -19,6 +19,10 @@ const Header = () => {
         up: { rotate: 40 },
         down: { rotate: 0 }
     }
+    const dropwdownBlock ={
+        up: { height: 0, opacity:0},
+        down: { height: 120, opacity:1}
+    }
     
     const [changeTheme, setChangeTheme] = useState(true)
     const [renderDropdown, setRenderDropdown] = useState(false)
@@ -26,14 +30,16 @@ const Header = () => {
     // FUNCTIONS
 
     useEffect(() => {
-        const clickedOut = (e) => {
-            if (renderDropdown && ref.current && !ref.current.contains(e.target)) {
-                setRenderDropdown(false)
+        if(renderDropdown){
+            const clickedOut = (e) => {
+                if (renderDropdown && ref.current && !ref.current.contains(e.target)) {
+                    setRenderDropdown(false)
+                }
             }
-        }
-        document.addEventListener("mousedown", clickedOut)
-        return () => {
-            document.removeEventListener("mousedown", clickedOut)
+            document.addEventListener("mousedown", clickedOut)
+            return () => {
+                document.removeEventListener("mousedown", clickedOut)
+            }
         }
 
     }, [renderDropdown])
@@ -69,10 +75,11 @@ const Header = () => {
     return (
         <nav className={style.center}>
             <div className={style.navbar}>
-
                 <Logo />
                 <div className={stateBurger ? `${style.openNavMenu} ${style.navMenuWrap}` : `${style.closedNavMenu} ${style.navMenuWrap}`}>
                     <ul className={`${style.navMenu} ${stateBurger ? style.color1 : style.color2}`}>
+                    <AnimatePresence>
+                       
                         <li
                             className={style.listItem}
                             ref={ref}
@@ -94,8 +101,13 @@ const Header = () => {
                                         className={style.dropdownArrowLine2}></motion.div>
                                 </div>
                             </div>
-                            {renderDropdown && (
-                                <ul className={style.dropdownItems}>
+
+
+                                <motion.ul 
+                                animate={renderDropdown ? "down" : "up"}
+                                variants={dropwdownBlock}
+                                initial={false}
+                                className={style.dropdownItems}>
                                     <Link href="/projects" passHref>
                                         <li onClick={() => toggleButtonBurger()}>
                                             Projects
@@ -109,9 +121,11 @@ const Header = () => {
                                     <li  onClick={() => toggleButtonBurger()}>
                                         Others
                                     </li>
-                                </ul>
-                            )}
+                                </motion.ul>
+
                         </li>
+                        </AnimatePresence>
+                        
                         <li
                          onClick={() => toggleButtonBurger()}>
                             <Link href="/courses" passHref >
@@ -124,9 +138,6 @@ const Header = () => {
                                 <div style={{color:"#6aa7e8"}} className={style.menuText}>Blog</div>
                             </Link>
                         </li>
-                        {/* <li 
-                         onClick={() => toggleButtonBurger()}
-                        ><Link href="/contact">Contact</Link></li> */}
                         <li className={style.changethemeli}>
                             <div className={style.changeTheme} onClick={() => changethemeHandler()}>
                                 <motion.div

@@ -210,4 +210,7 @@
         max-width: 500px;
         flex-direction: column;
     }
+    .projectItemPhoto{
+        width: 100%;
+    }
 }

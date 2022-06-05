@@ -30,7 +30,7 @@ const Header = () => {
     // FUNCTIONS
 
     useEffect(() => {
-        if(renderDropdown){
+        if(renderDropdown && !stateBurger){
             const clickedOut = (e) => {
                 if (renderDropdown && ref.current && !ref.current.contains(e.target)) {
                     setRenderDropdown(false)
@@ -42,7 +42,7 @@ const Header = () => {
             }
         }
 
-    }, [renderDropdown])
+    }, [renderDropdown,stateBurger])
     useEffect(() => {
         let savedTheme = window.localStorage.getItem("theme")
         if (savedTheme === 'darkmode') {

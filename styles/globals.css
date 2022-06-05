@@ -39,7 +39,6 @@
 html,
 body {
   font-family: 'Poppins', sans-serif;
-
   color:var(--txt-1c2128);
   padding: 0;
   background-color: var(--SiteBackground);
@@ -53,6 +52,8 @@ main {
 }
 body{
   display: flex;
+  overflow-y: scroll;
+
   flex-direction: column;
     height: 100%;
 }

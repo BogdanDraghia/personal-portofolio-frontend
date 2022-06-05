@@ -20,7 +20,7 @@ const Header = () => {
         down: { rotate: 0 }
     }
     
-    const [changeTheme, setChangeTheme] = useState(false)
+    const [changeTheme, setChangeTheme] = useState(true)
     const [renderDropdown, setRenderDropdown] = useState(false)
     const [stateBurger, setStateBurger] = useState(false)
     // FUNCTIONS
@@ -84,9 +84,11 @@ const Header = () => {
                                 <div className={style.dropdownArrow}>
                                     <motion.div
                                         animate={renderDropdown ? "down" : "up"}
+                                        initial={false}
                                         variants={variantsDropDown2}
                                         className={style.dropdownArrowLine1}></motion.div>
                                     <motion.div
+                                        initial={false}
                                         animate={renderDropdown ? "down" : "up"}
                                         variants={variantsDropDown1}
                                         className={style.dropdownArrowLine2}></motion.div>

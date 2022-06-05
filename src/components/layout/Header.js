@@ -90,12 +90,19 @@ const Header = () => {
                                 <div>My work</div>
                                 <div className={style.dropdownArrow}>
                                     <motion.div
+                                        transition={{
+                                            default:{duration:0.05}
+                                        }}
                                         animate={renderDropdown ? "down" : "up"}
                                         initial={false}
                                         variants={variantsDropDown2}
                                         className={style.dropdownArrowLine1}></motion.div>
                                     <motion.div
                                         initial={false}
+                                        transition={{
+                                            default:{duration:0.05}
+                                        }}
+                                        duration= {0.5}
                                         animate={renderDropdown ? "down" : "up"}
                                         variants={variantsDropDown1}
                                         className={style.dropdownArrowLine2}></motion.div>
@@ -107,6 +114,7 @@ const Header = () => {
                                 animate={renderDropdown ? "down" : "up"}
                                 variants={dropwdownBlock}
                                 initial={false}
+                                
                                 className={style.dropdownItems}>
                                     <Link href="/projects" passHref>
                                         <li onClick={() => toggleButtonBurger()}>

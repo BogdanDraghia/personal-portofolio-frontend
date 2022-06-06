@@ -91,6 +91,7 @@ const Header = () => {
                                 <div className={style.dropdownArrow}>
                                     <motion.div
                                         transition={{
+                                            type:"spring",
                                             default:{duration:0.05}
                                         }}
                                         animate={renderDropdown ? "down" : "up"}
@@ -136,14 +137,14 @@ const Header = () => {
                         
                         <li
                          onClick={() => toggleButtonBurger()}>
-                            <Link href="/courses" passHref >
-                                <div  className={style.menuText}>Courses</div>
+                            <Link href="/blog" passHref >
+                                <div  className={style.menuText}>Blog</div>
                             </Link>
                         </li>                        
                         <li
                          onClick={() => toggleButtonBurger()}>
-                            <Link href="/blog" passHref >
-                                <div style={{color:"#6aa7e8"}} className={style.menuText}>Blog</div>
+                            <Link href="/contact" passHref >
+                                <div style={{color:"#6aa7e8"}} className={style.menuText}>Contact</div>
                             </Link>
                         </li>
                         <li className={style.changethemeli}>

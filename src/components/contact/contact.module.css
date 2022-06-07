@@ -1,0 +1,113 @@
+.ContactContainer{
+    font-family: 'Poppins', sans-serif;
+    margin: 0 auto;
+    max-width: calc(100% - 5em);
+    width: 70em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.ContactBox {
+    display: flex;
+    width: 850px;
+    flex-direction: row;
+    flex: 4 1;
+  }
+.ContactFormBox {
+    flex: 3 1;
+  }
+
+.ParagraphT {
+    padding: 30px;
+  }
+  .ParagraphT>p{
+    font-size: 16px;
+    font-weight: 200;
+    color: var(--txt-grey);
+  }
+
+  .tests {
+    display: flex;
+  
+    flex-direction: column;
+  }
+  .textarea {
+    width: 100%;
+  }
+  .textarea {
+    width: 100%;
+  }
+  .tests > label,
+  .textarea > label {
+    display: block;
+    font-size: 18px;
+    margin: 20px 0px;
+  }
+  .textarea {
+    margin: 20px 0px;
+  }
+  
+  .textarea > textarea {
+    resize: vertical;
+    width: 100%;
+    font-family: inherit;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    padding-top: 1em !important;
+    min-height: 150px;
+  }
+  .tests input[type="text"],
+  .textarea > textarea {
+    background-color: #f8f8f8;
+    border: solid 1px #e5e5e5;
+    border-radius: 5px;
+    height: 3em;
+    font-size: 100%;
+    line-height: 1.15;
+    margin: 0;
+    padding: 0 1em;
+  }
+  .ContactInfoItem {
+    width: 100%;
+    margin: 15px 0px;
+    align-items: center;
+    display: inline-flex;
+  }
+  .InputContact {
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  .subInputContact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .ContactIcon > img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin: 10px;
+  }
+
+  .Sabutton {
+    background-color: var(--Accent);
+    color:white;
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 150px;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+  }
+  .form {
+    margin: 0px 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }

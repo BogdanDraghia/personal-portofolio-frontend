@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,400&display=swap');
 
 
 :root{
@@ -10,20 +9,23 @@
   --bg-white: #ffff;
   --txt-white:#ffff;
   --txt-dark:#15191d;
+  --txt-grey:#646f79;
   --moon-color:#ffff;
+  --bg-c1:#f6f8f9;
 }
 
 
 .darkmode {
-  
   --SiteBackground: var(--bg-dark);
   --moon-color: #f7ec87;
+  --bg-c1:var(--bg-dark);
   --txt-default: var(--txt-white);
 
 }
 .lightmode {
   --SiteBackground: var(--bg-white);
   --moon-color: #ffff;
+  --bg-c1:#f6f8f9;
   --txt-default: var(--txt-dark);
 
 }
@@ -39,7 +41,6 @@
 html,
 body {
   font-family: 'Poppins', sans-serif;
-
   color:var(--txt-1c2128);
   padding: 0;
   background-color: var(--SiteBackground);
@@ -53,6 +54,8 @@ main {
 }
 body{
   display: flex;
+  overflow-y: scroll;
+
   flex-direction: column;
     height: 100%;
 }

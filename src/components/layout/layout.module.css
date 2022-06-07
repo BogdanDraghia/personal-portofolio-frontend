@@ -3,7 +3,6 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding-left: calc(100vw - 100%)
 }
 
 /* NAVBAR */
@@ -36,6 +35,7 @@
     padding: 10px 10px;
   }
   .menuText{
+    cursor: pointer;
     color:var(--txt-default)
   }
   .changethemeli{
@@ -67,6 +67,7 @@
     position: relative;
   }
   .dropdownItems{
+    cursor:pointer;
     align-self: flex-start;
     box-shadow: var(--box-shadow);
     margin-top: 35px;
@@ -74,6 +75,8 @@
     border-radius: 10px;
     padding:0px;
     overflow: hidden;
+    height: 100%;
+    background-color: red;
     position: absolute;
     list-style-type: none;
     background-color: var(--SiteBackground);
@@ -86,6 +89,7 @@
     color:var(--txt-default);
     padding:10px 20px;
   }
+
   
   .changeTheme {
     cursor:pointer;
@@ -241,6 +245,7 @@
       display: flex;
     }
     .burgerMenu{
+      padding: 10px 20px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -267,6 +272,7 @@
       box-shadow: none;
       margin-top: 15px;
       border-radius: 0px;
+      width: 100%;
       padding:0px;
       overflow: hidden;
       list-style-type: none;
@@ -281,6 +287,10 @@
     .color2{
       height: 400px;
       display: none;
+    }
+    .navbar{
+      width: 100%;
+      max-width: initial;
     }
   }
 

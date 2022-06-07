@@ -2,12 +2,9 @@ import style from "../src/components/projects/projects.module.css"
 import Image from "next/image"
 
 import Button from "../src/components/assets/Button"
-import Refresh from "../src/props/images/refresh"
 import RefreshSvg from "../src/props/images/refresh.svg"
-import SearchSvg from "../src/props/images/search.svg"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import Search from "../src/props/images/search"
 
 let projectData = require("../src/data/projects-data.json")
 let tagList = projectData[0].tagsList

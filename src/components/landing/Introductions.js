@@ -29,7 +29,12 @@ const Introduction = () => {
                     <h1>Full-stack developer</h1>
                     <p>I want to share the knowledge that I have acquired so far and I am willing to learn many new things.</p>
                     <div className={style.buttonGroup}>
-                        <Button text="My work" fill="var(--Accent)" colortxt="white"/>
+                        <div
+                        
+                        >
+                            <Button text="My work" fill="var(--Accent)" colortxt="white"/>
+
+                        </div>
                         <Button text="Contact" hover={false} colortxt="var(--Accent)"/>
                     </div>
             </div>

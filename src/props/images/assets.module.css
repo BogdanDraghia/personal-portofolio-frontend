@@ -58,3 +58,11 @@
   .buttonNoFill{
     color: var(--Accent);
   }
+
+
+  @media (max-width: 768px) {
+    .LogoContainer{
+      padding: 10px 20px;
+    }
+  }
+  

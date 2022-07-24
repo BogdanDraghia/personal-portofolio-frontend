@@ -17,10 +17,12 @@
 	"extensions": [
 		"dbaeumer.vscode-eslint"
 	],
-
+	"runArgs": [
+		"--network=portofolio-network","--name","portofolio_frontend","--ip", "172.20.0.10"
+	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
-	"appPort": 3000
+	"forwardPorts": [3000]
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
 

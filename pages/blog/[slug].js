@@ -1,15 +1,14 @@
-import { serialize } from 'next-mdx-remote/serialize'
-import { MDXRemote } from 'next-mdx-remote'
-import fs from 'fs'
-import path from 'path'
-import matter from 'gray-matter'
-import SyntaxHighlighter from 'react-syntax-highlighter'
+import axios from 'axios'
 import style from "../../src/components/blog/blogpost.module.css"
+
+import BlogPage from '../../src/components/blog/blogPostPage'
 export const getStaticPaths = async () => {
-    const files = fs.readdirSync(path.join('posts'))
-    const paths = files.map(filename => ({
+
+    const articles = await axios.get(`${process.env.BACKEND_URL}/api/articles`)
+
+    const paths = articles.data.data.map(article => ({
       params: {
-        slug: filename.replace('.mdx', '')
+        slug:article.attributes.slug.toString()
       }
     }))
     return {
@@ -19,24 +18,23 @@ export const getStaticPaths = async () => {
   }
 
   export const getStaticProps = async ({ params: { slug } }) => {
-    const markdownWithMeta = fs.readFileSync(path.join('posts',
-      slug + '.mdx'), 'utf-8')
-    const { data: frontMatter, content } = matter(markdownWithMeta)
-    const mdxSource = await serialize(content)
+    const backendUrl = process.env.BACKEND_URL
+    const article = await axios.get(`${process.env.BACKEND_URL}/api/articles?filters[slug][$eq]=${slug}`)
+    console.log(article.data.data[0].attributes)
     return {
       props: {
-        frontMatter,
+        article:article.data.data[0] .attributes,
+        backendUrl,
         slug,
-        mdxSource
       }
     }
   }
 
-  const PostPage = ({ frontMatter: { title }, mdxSource }) => {
+  const PostPage = ({ backendUrl, article: { title, content,thumbnailUrl} }) => {
+    console.log(backendUrl)
     return (
         <div className={style.centerSection}>
-          <h1>{title}</h1>
-          <MDXRemote {...mdxSource} components={{ SyntaxHighlighter }} />
+          <BlogPage title={title} backendUrl={backendUrl} content={content} thumbnailUrl={thumbnailUrl}/>
         </div>
     )
   }

@@ -22,3 +22,16 @@ Variables and description:
     -   stateSearch = true > true
 
 
+
+
+Blog section
+
+With Strapi integration, we will fetch data as static ( to ensure an optimization)
+
+
+
+Strapi image 
+
+http://localhost:1337/api/upload/files/2
+
+- 

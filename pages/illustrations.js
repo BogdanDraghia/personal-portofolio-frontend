@@ -16,7 +16,7 @@ const IllustrationItem = (props)=>{
                 <div ></div>
                 <div ></div>
             </div>
-            <Image src={`${props.backendUrl}${props.image}`}   width="300px" height="300" objectFit="cover" alt="profile" />
+            <Image src={`${props.image}`}   width="300px" height="300" objectFit="cover" alt="profile" />
         </motion.div>
     )
 }
@@ -78,7 +78,7 @@ const IllustrationOverlay = (props)=>{
                             }
                            
                         </AnimatePresence>
-                        <Image src={props.backendUrl+props.data.attributes.image}   width="400px" height="400px" objectFit="cover" alt="profile" />
+                        <Image src={props.data.attributes.image}   width="400px" height="400px" objectFit="cover" alt="profile" />
                     </div>
                     <div className={style.palette}>
                         {props.data.attributes.pallete.map((item,index)=>(

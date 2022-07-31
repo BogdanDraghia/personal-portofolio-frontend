@@ -114,7 +114,7 @@ const ProjectItem = ({ data,backendUrl }) => {
       exit={{ opacity: 0 }}
       className={style.projectItem}>
       <div className={style.projectItemPhoto}>
-        <Image src={`${backendUrl}${data.attributes.image}`} width="250" height="250"  alt="profile" />
+        <Image src={`${data.attributes.image}`} width="250" height="250"  alt="profile" />
       </div>
       <div className={style.projectItemInfo}>
         <div className={style.pItemTittle}>

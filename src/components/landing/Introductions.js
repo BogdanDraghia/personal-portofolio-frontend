@@ -7,16 +7,10 @@ import Github from "../../props/icons/github"
 import Instagram from "../../props/icons/instagram"
 import Linkedin from "../../props/icons/linkedin"
 import Button from "../assets/Button"
-import { motion } from "framer-motion";
-const IconShortcut = ({name,icon,pass})=>{
 
-    return( 
-    <motion.a whileHover={{ scale: 1.1 }} target="_blank" className={style.ShortcutItem} href={pass} >
-            {icon}
-    </motion.a>
-    
-    )
-}
+import SvgIconHelper from "../../components/assets/SvgIconHelper"
+import { motion } from "framer-motion";
+
 
 
 const Introduction = () => {
@@ -48,10 +42,10 @@ const Introduction = () => {
                         <Image  src={"/profile.jpg"}  alt="bogdandraghia"  width="100%"  objectFit="cover" height="100%" layout="responsive"/>
                     </motion.div>
                     <div className={style.IconShortcutContainer}>
-                            <IconShortcut name="cv" icon={<Cv width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>
-                            <IconShortcut name="github" icon={<Github width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>
-                            <IconShortcut name="github" icon={<Instagram width="60px" height="60px" />} pass={"https://www.linkedin.com/in/bogdandraghia"}/>
-                            <IconShortcut name="github" icon={<Linkedin width="60px" height="60px" />} pass={"https://www.linkedin.com/in/bogdandraghia/"}/>
+                            <SvgIconHelper name="cv" icon={<Cv width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>
+                            <SvgIconHelper name="github" icon={<Github width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>
+                            <SvgIconHelper name="github" icon={<Instagram width="60px" height="60px" />} pass={"https://www.linkedin.com/in/bogdandraghia"}/>
+                            <SvgIconHelper name="github" icon={<Linkedin width="60px" height="60px" />} pass={"https://www.linkedin.com/in/bogdandraghia/"}/>
                     </div>
                 </div>
             </div>

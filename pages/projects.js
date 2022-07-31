@@ -6,12 +6,13 @@ import RefreshSvg from "../src/props/images/refresh.svg"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
+import axios from "axios"
 let projectData = require("../src/data/projects-data.json")
 let tagList = projectData[0].tagsList
 
 
 
-const Projects = () => {
+const Projects = ({projects,categories,backendUrl}) => {
   const [activeFilter, setActiveFilter] = useState([])
   const [searchDesc, setSearchDesc] = useState("")
   const handleResetFilter = () => {
@@ -22,15 +23,16 @@ const Projects = () => {
     return (
       <div
         onClick={() => {
-          onChangeFilter(data)
-          console.log(activeFilter)
+          onChangeFilter(data.attributes.categoryName)
         }}
-        className={style.tagBoxFilter} style={{ backgroundColor: tagList[data]["color"], opacity: activeFilter.includes(data) ? 1 : 0.6 }}>
-        {data}
+        className={style.tagBoxFilter} style={{ backgroundColor: data.attributes.color, opacity: activeFilter.includes(data.attributes.categoryName) ? 1 : 0.6 }}>
+        {data.attributes.categoryName}
       </div>
     )
   }
   const onChangeFilter = (dataElem) => {
+    console.log(dataElem)
+    console.log(activeFilter)
     const index = activeFilter.findIndex((name) => name === dataElem);
     if (index !== -1) {
       setActiveFilter([
@@ -41,29 +43,32 @@ const Projects = () => {
       setActiveFilter(prevState => [...prevState, dataElem])
     }
   }
-  const filterOpt = projectData.slice(1).filter(project => {
+  const filterOpt = projects.filter(project => {
+    console.log(project)
     if (activeFilter.length === 0) return project
-    if (activeFilter.some(val => project.tags.includes(val)))
+    if (activeFilter.some(val => project.attributes.categories.data.map((e)=>e.attributes.categoryName).includes(val))){
+      console.log("ss")
+      console.log(project)
       return project
-  }).filter(project => project.description.toLowerCase().includes(searchDesc.toLowerCase()))
+    }
+  }).filter(project => project.attributes.content.toLowerCase().includes(searchDesc.toLowerCase()))
   const handleSearchChange = ({ target }) => setSearchDesc(target.value);
+  console.log(filterOpt)
+
   return (
     <div className={style.projectContainer}>
       <h1>Projects</h1>
       <div className={style.filterSectionContainer}>
         <div className={style.filterSection}>
           <div className={style.FilterSearchSection}>
-
             <input
               className={style.searchInputContainerTmp}
               onChange={handleSearchChange} value={searchDesc} type="text" />
           </div>
-
-          
           <div className={style.tagContainer}>
             <div className={style.subTagContainer}>
-            {Object.keys(tagList).map((name, index) => (
-              <TagFilter onChangeFilter={onChangeFilter} data={name} dataactivelist={activeFilter} key={index} />
+            {categories.map((category, index) => (
+              <TagFilter onChangeFilter={onChangeFilter} data={category} dataactivelist={activeFilter} key={index} />
               ))}
             </div>
           <div 
@@ -77,13 +82,16 @@ const Projects = () => {
           </div>
         </div>
       </div>
+      <div className={style.projectItemsContainer}>
+
       <AnimatePresence>
         {
           filterOpt.length > 0 ? filterOpt.map((data, index) => (
-            <ProjectItem data={data} key={index} />
-          )) : <div style={{ marginTop: 100 }}>Nothing found</div>
-        }
+            <ProjectItem data={data} backendUrl={backendUrl} key={index} />
+            )) : <div style={{ marginTop: 100 }}>Nothing found</div>
+          }
       </AnimatePresence>
+          </div>
     </div>
   )
 }
@@ -92,13 +100,13 @@ export default Projects
 /// Components
 const Tag = ({ data }) => {
   return (
-    <div className={style.tagBox} style={{ backgroundColor: tagList[data]["color"] }}>
-      {data}
+    <div className={style.tagBox} style={{ backgroundColor: data.attributes.color }}>
+      {data.attributes.categoryName}
     </div>
   )
 }
 
-const ProjectItem = ({ data }) => {
+const ProjectItem = ({ data,backendUrl }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -106,33 +114,45 @@ const ProjectItem = ({ data }) => {
       exit={{ opacity: 0 }}
       className={style.projectItem}>
       <div className={style.projectItemPhoto}>
-        <Image src="/images/blog/3.png" className={style.projectItemPhotoClass} layout="fill"  alt="profile" />
+        <Image src={`${data.attributes.image}`} width="250" height="250"  alt="profile" />
       </div>
       <div className={style.projectItemInfo}>
         <div className={style.pItemTittle}>
-          <h2>{data.name}</h2>
-        </div>
-        <div className={style.pItemDescription}>
+          <h2>{data.attributes.title}</h2>
+
           <p>
-            {data.description.length > 100 ? (<div>{data.description.slice(0,data.description.lastIndexOf(" "))+"..."}</div>):(<div>{data.description.length}</div>)}
+            {data.attributes.content.length > 100 ? (<div>{data.attributes.content.slice(0,data.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{data.description.length}</div>)}
           </p>
         </div>
         <div className={style.pItemTags}>
           {
-            data.tags.map((tags, index) => (
-              <Tag data={tags}
+            data.attributes.categories.data.map((data, index) => (
+              <Tag data={data}
                 key={index}
               />
             ))
           }
         </div>
         <div className={style.pItemLinks}>
-          <Button text="Source" fill="#f2f2f2"  colortxt={"black"} />
-          <Button text="Demo" fill="#f2f2f2" colortxt={"black"} />
+          <div className={style.buttonProjects}>
+          Source
+          </div>
         </div>
       </div>
     </motion.div>
-
   )
 }
 
+export async function getStaticProps() {
+  const res = await axios.get(`${process.env.BACKEND_URL}/api/projects?populate=%2A`)
+  const categories = await axios.get(`${process.env.BACKEND_URL}/api/categories`)
+  const backendUrl = process.env.BACKEND_URL
+  console.log(res.data.data)
+  return {
+    props: {
+      backendUrl,
+      categories: categories.data.data,
+      projects:res.data.data,
+    },
+  }
+}

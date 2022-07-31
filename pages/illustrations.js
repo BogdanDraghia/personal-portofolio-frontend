@@ -2,9 +2,7 @@ import style from "../src/components/illustrations/illustrations.module.css"
 import Image from "next/image"
 import {useState,useEffect} from "react"
 import { motion, AnimatePresence } from "framer-motion"
-
-let IllustrationsData = require("../src/data/illustrations-data.json")
-
+import axios from "axios"
 
 const IllustrationItem = (props)=>{
     return (
@@ -18,13 +16,14 @@ const IllustrationItem = (props)=>{
                 <div ></div>
                 <div ></div>
             </div>
-            <Image src={"/images/illustrations/dog.jpg"}   width="300px" height="300" objectFit="cover" alt="profile" />
+            <Image src={`${props.image}`}   width="300px" height="300" objectFit="cover" alt="profile" />
         </motion.div>
     )
 }
 
 const IllustrationOverlay = (props)=>{
-
+        console.log("---------")
+        console.log(props)
         const [copynotification,setCopyNotification] = useState(false)
     const copyColor = (elem)=>{
         navigator.clipboard.writeText(elem)
@@ -42,6 +41,7 @@ const IllustrationOverlay = (props)=>{
         const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
         return `rgba(${r},${g},${b},${alpha})`;
       };
+      console.log(props)
     return (
         <AnimatePresence>
         {props.render && (
@@ -49,7 +49,7 @@ const IllustrationOverlay = (props)=>{
             initial={{ opacity: 0, zIndex: 3 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className={`${style.IllustrationOverlay} close`}  style={{backgroundColor:hex2rgba(props.data.dominantColor,0.8)}} data="close" onClick={(e)=>{closeOverlay(e)}}>
+            className={`${style.IllustrationOverlay} close`}  style={{backgroundColor:hex2rgba(props.data.attributes.dominantColor,0.8)}} data="close" onClick={(e)=>{closeOverlay(e)}}>
                 <div className={style.overlayContent}>
                     <div className={style.closeHelperContainer} data="close">
                         <div className={style.closeHelperCross}>
@@ -78,10 +78,10 @@ const IllustrationOverlay = (props)=>{
                             }
                            
                         </AnimatePresence>
-                        <Image src={"/images/illustrations/dog.jpg"}   width="400px" height="400px" objectFit="cover" alt="profile" />
+                        <Image src={props.data.attributes.image}   width="400px" height="400px" objectFit="cover" alt="profile" />
                     </div>
                     <div className={style.palette}>
-                        {props.data.pallete.map((item,index)=>(
+                        {props.data.attributes.pallete.map((item,index)=>(
                             <motion.div 
 
                             className={style.paletteBox}
@@ -104,11 +104,12 @@ const IllustrationOverlay = (props)=>{
     )
 }
 
-const Illustrations = ({illustrations})=>{
+const Illustrations = ({illustrations,backendUrl})=>{
     const [isOpen, setIsOpen] = useState(false)
     const [currentItemData, setCurrentItemData] = useState(undefined)
     const handleOverlay= (index) =>{
-        setCurrentItemData(illustrations[index-1])
+        console.log(index)
+         setCurrentItemData(illustrations[index])
         setIsOpen(!isOpen)
     }
     
@@ -129,21 +130,24 @@ const Illustrations = ({illustrations})=>{
             <div className={style.IllustrationsGrid}>
                 {illustrations.map((data,index)=>(
                     <IllustrationItem 
-                    handleOverlay={handleOverlay} id={data.id} key={index}>
+                    handleOverlay={handleOverlay} image={data.attributes.image} id={index} backendUrl={backendUrl} key={index}>
                         {data.name}
                     </IllustrationItem>
                 ))}
             </div>
-            <IllustrationOverlay render={isOpen} data={currentItemData} handleOverlay={handleOverlay}/>
+            <IllustrationOverlay render={isOpen} data={currentItemData} backendUrl={backendUrl} handleOverlay={handleOverlay}/>
         </div>
     )
 }
 
 export async function getStaticProps() {
-    const res = IllustrationsData
+    const res = await axios.get(`${process.env.BACKEND_URL}/api/illustrations`)
+    const backendUrl = process.env.BACKEND_URL
+    console.log(res.data.data)
     return {
       props: {
-        illustrations:res,
+        backendUrl,
+        illustrations:res.data.data,
       },
     }
   }

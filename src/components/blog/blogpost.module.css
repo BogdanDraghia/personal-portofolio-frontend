@@ -3,13 +3,19 @@
     max-width: calc(100% - 5em);
     width: 50em;
 }
-
-.imageBlogPost {
-    width: 100%;
+.containerBlogPost{
+    margin-top: 50px;
 }
+.imageBlogPost {
+    border-radius: 10px;
+    overflow:hidden ;
+    width: 100%;
+    height: fit-content;
 
+}
 .detailsBlogPost {
     display: flex;
+    margin:10px 0px;
     justify-content: space-between;
 }
 

@@ -1,5 +1,7 @@
 import axios from 'axios'
 import style from "../../src/components/blog/blogpost.module.css"
+import { serialize } from 'next-mdx-remote/serialize'
+
 
 import BlogPage from '../../src/components/blog/blogPostPage'
 export const getStaticPaths = async () => {
@@ -21,9 +23,11 @@ export const getStaticPaths = async () => {
     const backendUrl = process.env.BACKEND_URL
     const article = await axios.get(`${process.env.BACKEND_URL}/api/articles?filters[slug][$eq]=${slug}`)
     console.log(article.data.data[0].attributes)
+    const contentMDX = await serialize(article.data.data[0].attributes.content)
     return {
       props: {
-        article:article.data.data[0] .attributes,
+        article:article.data.data[0].attributes,
+        contentMDX,
         backendUrl,
         slug,
       }

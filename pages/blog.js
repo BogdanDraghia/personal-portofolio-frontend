@@ -4,13 +4,13 @@ import Link from "next/link"
 import {motion} from "framer-motion"
 import axios from "axios"
 
-const BlogHighLight = ({dataPost,backendUrl})=>{
+const BlogHighLight = ({dataPost})=>{
     console.log(dataPost)
     return(
         <Link href={'/blog/' + dataPost.attributes.slug} passHref>
             <a className={style.lastPostSection}>
                 <div className={style.blogItemLastImage}>
-                    <Image src={backendUrl+dataPost.attributes.thumbnailUrl} alt="mockphoto" width="400px" height="300px" objectFit="cover"/>    
+                    <Image src={dataPost.attributes.thumbnailUrl} alt="mockphoto" width="400px" height="300px" objectFit="cover"/>    
                 </div> 
                 <div className={style.blogItemLastText}>
                     <h1>{dataPost.attributes.title}</h1>
@@ -22,14 +22,14 @@ const BlogHighLight = ({dataPost,backendUrl})=>{
     )
 }
 
-const BlogItem = ({dataPost,backendUrl})=>{
+const BlogItem = ({dataPost})=>{
     return(
         <Link href={'/blog/' + dataPost.attributes.slug}  passHref>
             <motion.a 
             whileHover={{scale:1.02}}
             className={style.blogItem}>
             <div className={style.blogItemImage}>
-                <Image src={backendUrl+dataPost.attributes.thumbnailUrl} width="400px" height="300px" objectFit="cover" alt="profile"/>
+                <Image src={dataPost.attributes.thumbnailUrl} width="400px" height="300px" objectFit="cover" alt="profile"/>
             </div>
             <div className={style.blogItemText}>
                 <h1>{dataPost.attributes.title}</h1>

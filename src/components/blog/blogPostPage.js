@@ -1,6 +1,11 @@
 
 import BlogPhotoFullSize from "./blogPhoto"
 import style from "./blogpost.module.css"
+import { MDXRemote } from 'next-mdx-remote'
+import Test from "./TestElement"
+
+const components = {Test}
+
 const blogPage = ({ backendUrl,title, content, thumbnailUrl }) => {
     return (
         <div className={style.containerBlogPost}>
@@ -25,7 +30,8 @@ const blogPage = ({ backendUrl,title, content, thumbnailUrl }) => {
                 {title}
             </h1>
             <div>
-                {content}
+                
+                    {content}
             </div>
         </div>
     )

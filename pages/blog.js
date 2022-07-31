@@ -1,5 +1,3 @@
-import Layout from "../src/components/layout/Layout"
-import path from "path"
 import Image from "next/image"
 import style from "../src/components/blog/blog.module.css"
 import Link from "next/link"
@@ -16,7 +14,7 @@ const BlogHighLight = ({dataPost,backendUrl})=>{
                 </div> 
                 <div className={style.blogItemLastText}>
                     <h1>{dataPost.attributes.title}</h1>
-                    <p>{dataPost.attributes.description}</p>
+                    <p>{dataPost.attributes.content.length > 100 ? (<div>{dataPost.attributes.content.slice(0,dataPost.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{dataPost.attributes.content}</div>)}</p>
                     <div className={style.button}>Read more</div>     
                 </div>
             </a>
@@ -35,7 +33,7 @@ const BlogItem = ({dataPost,backendUrl})=>{
             </div>
             <div className={style.blogItemText}>
                 <h1>{dataPost.attributes.title}</h1>
-                <p>{dataPost.attributes.content}</p>
+                {dataPost.attributes.content.length > 100 ? (<div>{dataPost.attributes.content.slice(0,dataPost.attributes.content.slice(0,130).lastIndexOf(" "))+"..."}</div>):(<div>{dataPost.attributes.content}</div>)}
             </div>
             </motion.a>
         </Link>

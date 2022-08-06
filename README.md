@@ -4,8 +4,6 @@ Description
 
 This website is ....
 
-How to contribuite
-
 
 
 ## Developing 

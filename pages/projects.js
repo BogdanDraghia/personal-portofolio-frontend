@@ -7,12 +7,10 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 import axios from "axios"
-let projectData = require("../src/data/projects-data.json")
-let tagList = projectData[0].tagsList
 
 
 
-const Projects = ({projects,categories,backendUrl}) => {
+const Projects = ({projects,categories,envUrls}) => {
   const [activeFilter, setActiveFilter] = useState([])
   const [searchDesc, setSearchDesc] = useState("")
   const handleResetFilter = () => {
@@ -47,13 +45,10 @@ const Projects = ({projects,categories,backendUrl}) => {
     console.log(project)
     if (activeFilter.length === 0) return project
     if (activeFilter.some(val => project.attributes.categories.data.map((e)=>e.attributes.categoryName).includes(val))){
-      console.log("ss")
-      console.log(project)
       return project
     }
   }).filter(project => project.attributes.content.toLowerCase().includes(searchDesc.toLowerCase()))
   const handleSearchChange = ({ target }) => setSearchDesc(target.value);
-  console.log(filterOpt)
 
   return (
     <div className={style.projectContainer}>
@@ -83,11 +78,10 @@ const Projects = ({projects,categories,backendUrl}) => {
         </div>
       </div>
       <div className={style.projectItemsContainer}>
-
       <AnimatePresence>
         {
           filterOpt.length > 0 ? filterOpt.map((data, index) => (
-            <ProjectItem data={data} backendUrl={backendUrl} key={index} />
+            <ProjectItem data={data} urls={envUrls} key={index} />
             )) : <div style={{ marginTop: 100 }}>Nothing found</div>
           }
       </AnimatePresence>
@@ -96,7 +90,6 @@ const Projects = ({projects,categories,backendUrl}) => {
   )
 }
 export default Projects
-
 /// Components
 const Tag = ({ data }) => {
   return (
@@ -106,7 +99,8 @@ const Tag = ({ data }) => {
   )
 }
 
-const ProjectItem = ({ data,backendUrl }) => {
+const ProjectItem = ({ data,urls}) => {
+  console.log(urls)
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -114,14 +108,14 @@ const ProjectItem = ({ data,backendUrl }) => {
       exit={{ opacity: 0 }}
       className={style.projectItem}>
       <div className={style.projectItemPhoto}>
-        <Image src={`${data.attributes.image}`} width="250" height="250"  alt="profile" />
+        <Image src={`${urls.provider}${data.attributes.image}`} width="250" height="250"  alt="profile" />
       </div>
       <div className={style.projectItemInfo}>
         <div className={style.pItemTittle}>
           <h2>{data.attributes.title}</h2>
 
           <p>
-            {data.attributes.content.length > 100 ? (<div>{data.attributes.content.slice(0,data.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{data.description.length}</div>)}
+            {data.attributes.content.length > 100 ? (<div>{data.attributes.content.slice(0,data.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{data.attributes.content.length}</div>)}
           </p>
         </div>
         <div className={style.pItemTags}>
@@ -145,12 +139,13 @@ const ProjectItem = ({ data,backendUrl }) => {
 
 export async function getStaticProps() {
   const res = await axios.get(`${process.env.BACKEND_URL}/api/projects?populate=%2A`)
+
   const categories = await axios.get(`${process.env.BACKEND_URL}/api/categories`)
-  const backendUrl = process.env.BACKEND_URL
-  console.log(res.data.data)
+
+  const envUrls = {back:process.env.BACKEND_URL,provider:process.env.PROVIDER_URL}
   return {
     props: {
-      backendUrl,
+      envUrls,
       categories: categories.data.data,
       projects:res.data.data,
     },

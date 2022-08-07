@@ -44,7 +44,7 @@ const Introduction = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     className={style.ImageMock} >
-                        <Image  src={"/profile.jpg"}  alt="bogdandraghia"  width="100%"  objectFit="cover" height="100%" layout="responsive"/>
+                        <Image priority src={"/profile.jpg"}  alt="bogdandraghia"  width="100%"  objectFit="cover" height="100%" layout="responsive"/>
                     </motion.div>
                     <div className={style.IconShortcutContainer}>
                             <SvgIconHelper name="cv" icon={<Cv width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>

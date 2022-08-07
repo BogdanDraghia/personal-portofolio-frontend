@@ -1,11 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
 :root{
   --box-shadow:rgb(0 0 0 / 4%) 0px 8px 16px, rgb(0 0 0 / 8%) 0px 4px 8px;
+  --box-shadow2: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.06);
+  
   --site-background-light:#f9fafb;
   --site-background-dark:#101214;
   /* ELEMENTS */
   --h1-text-color:#272727;
-  --h1-text-size:32px;
+  --h1-text-sizeL:32px;
+  --h1-text-sizeS:28px;
+
   /* COLORS */
   --accent:#6aa7e8;
   --white:#ffff;

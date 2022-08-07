@@ -16,7 +16,7 @@ const IllustrationItem = (props)=>{
                 <div ></div>
                 <div ></div>
             </div>
-            <Image src={`${props.image}`}   width="300px" height="300" objectFit="cover" alt="profile" />
+            <Image src={`${props.providerUrl}${props.image}`}   width="300px" height="300" objectFit="cover" alt="profile" />
         </motion.div>
     )
 }
@@ -78,7 +78,7 @@ const IllustrationOverlay = (props)=>{
                             }
                            
                         </AnimatePresence>
-                        <Image src={props.data.attributes.image}   width="400px" height="400px" objectFit="cover" alt="profile" />
+                        <Image src={`${props.providerUrl}${props.data.attributes.image}`}   width="400px" height="400px" objectFit="cover" alt="profile" />
                     </div>
                     <div className={style.palette}>
                         {props.data.attributes.pallete.map((item,index)=>(
@@ -104,7 +104,7 @@ const IllustrationOverlay = (props)=>{
     )
 }
 
-const Illustrations = ({illustrations,backendUrl})=>{
+const Illustrations = ({illustrations,providerUrl})=>{
     const [isOpen, setIsOpen] = useState(false)
     const [currentItemData, setCurrentItemData] = useState(undefined)
     const handleOverlay= (index) =>{
@@ -130,23 +130,23 @@ const Illustrations = ({illustrations,backendUrl})=>{
             <div className={style.IllustrationsGrid}>
                 {illustrations.map((data,index)=>(
                     <IllustrationItem 
-                    handleOverlay={handleOverlay} image={data.attributes.image} id={index} backendUrl={backendUrl} key={index}>
+                    handleOverlay={handleOverlay} image={data.attributes.image} id={index} providerUrl={providerUrl} key={index}>
                         {data.name}
                     </IllustrationItem>
                 ))}
             </div>
-            <IllustrationOverlay render={isOpen} data={currentItemData} backendUrl={backendUrl} handleOverlay={handleOverlay}/>
+            <IllustrationOverlay render={isOpen} data={currentItemData} providerUrl={providerUrl} handleOverlay={handleOverlay}/>
         </div>
     )
 }
 
 export async function getStaticProps() {
     const res = await axios.get(`${process.env.BACKEND_URL}/api/illustrations`)
-    const backendUrl = process.env.BACKEND_URL
-    console.log(res.data.data)
+    const providerUrl = process.env.PROVIDER_URL
+    console.log(process.env.PROVIDER_URL)
     return {
       props: {
-        backendUrl,
+        providerUrl,
         illustrations:res.data.data,
       },
     }

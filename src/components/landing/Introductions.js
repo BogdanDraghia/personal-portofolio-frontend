@@ -16,7 +16,6 @@ import { motion } from "framer-motion";
 const Introduction = () => {
 
     return (
-    <div className={style.Wrap}>
         <div className={style.center}>
             <div className={style.txtSection}>
                     <p>Hello, Im Bogdan</p>
@@ -55,7 +54,6 @@ const Introduction = () => {
                 </div>
             </div>
         </div>
-    </div> 
     )
 }
 export default Introduction

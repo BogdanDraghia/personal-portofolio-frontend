@@ -3,7 +3,6 @@
 :root {
   --box-shadow: rgb(0 0 0 / 4%) 0px 8px 16px, rgb(0 0 0 / 8%) 0px 4px 8px;
   --box-shadow2: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.06);
-
   --site-background-light: #f9fafb;
   --site-background-dark: #101214;
   /* ELEMENTS */

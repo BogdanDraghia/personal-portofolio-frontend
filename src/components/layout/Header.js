@@ -127,9 +127,9 @@ const Header = () => {
                                             Illustrations
                                         </li>
                                     </Link>
-                                    <li  onClick={() => toggleButtonBurger()}>
+                                    {/* <li  onClick={() => toggleButtonBurger()}>
                                         Others
-                                    </li>
+                                    </li> */}
                                 </motion.ul>
 
                         </li>

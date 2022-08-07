@@ -4,6 +4,7 @@
     width: 50em;
 }
 .containerBlogPost{
+    color:var(--h1-text-color);
     margin-top: 50px;
 }
 .imageBlogPost {
@@ -14,6 +15,7 @@
 
 }
 .detailsBlogPost {
+    color:var(--h1-text-color);
     display: flex;
     margin:10px 0px;
     justify-content: space-between;

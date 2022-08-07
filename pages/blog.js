@@ -15,7 +15,7 @@ const BlogHighLight = ({dataPost})=>{
                 <div className={style.blogItemLastText}>
                     <h1>{dataPost.attributes.title}</h1>
                     <p>{dataPost.attributes.content.length > 100 ? (<div>{dataPost.attributes.content.slice(0,dataPost.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{dataPost.attributes.content}</div>)}</p>
-                    <div className={style.button}>Read more</div>     
+                    <div className={style.buttton}>Read more</div>     
                 </div>
             </a>
         </Link>
@@ -44,13 +44,18 @@ const BlogContainer = ({posts,backendUrl})=>{
     return(
         <div className={style.wrapBlog}>   
             <div className={style.centerSection}>
+                <div className={style.subContentContainer}>
+
                 <BlogHighLight dataPost={posts[0]} backendUrl={backendUrl}/>
+                </div>
+                <div className={style.subContentContainer}>
                 <div className={style.postSection}>
                     {
                         posts.slice(1).map((post,index)=>(
                             <BlogItem dataPost={post} backendUrl={backendUrl} key={index}/>
                         ))
                     }
+                </div>
                 </div>
             </div>
         </div>

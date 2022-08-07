@@ -55,7 +55,7 @@
     background-color: white;
     padding:40px 35px 15px;
     margin:auto; 
-    border-radius: 10px;
+    border-radius: var(--border2);
 }
 .palette{
     display: flex;
@@ -100,7 +100,7 @@
     position: absolute;
     display: block;
     height: 5px;
-    background-color: var(--Accent);
+    background-color: var(--accent);
 
 }
 .helperOpen{

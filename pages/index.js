@@ -8,7 +8,7 @@ export default function Home() {
         <title>Bogdan Draghia</title>
         <meta name="description" content="Personal portofolio" />
         <link rel="icon" href="/favicon.ico" />
-        </Head>
+      </Head>
         <Introduction/>
     </div>
   )

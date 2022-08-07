@@ -7,7 +7,7 @@ import Github from "../../props/icons/github"
 import Instagram from "../../props/icons/instagram"
 import Linkedin from "../../props/icons/linkedin"
 import Button from "../assets/Button"
-
+import Link from 'next/link'
 import SvgIconHelper from "../../components/assets/SvgIconHelper"
 import { motion } from "framer-motion";
 
@@ -16,20 +16,24 @@ import { motion } from "framer-motion";
 const Introduction = () => {
 
     return (
-    <div className={style.Wrap}>
         <div className={style.center}>
             <div className={style.txtSection}>
                     <p>Hello, Im Bogdan</p>
                     <h1>Full-stack developer</h1>
                     <p>I want to share the knowledge that I have acquired so far and I am willing to learn many new things.</p>
                     <div className={style.buttonGroup}>
-                        <div
-                        
-                        >
-                            <Button text="My work" fill="var(--Accent)" colortxt="white"/>
-
+                        <Link href="/projects" passHref>
+                        <div>
+                            <Button text="My work" fill="var(--accent)" colortxt="white"/>
                         </div>
-                        <Button text="Contact" hover={false} colortxt="var(--Accent)"/>
+                        </Link>
+                        <Link href="/contact" passHref>
+<div>
+
+                        <Button text="Contact" hover={false} colortxt="var(--accent)"/>
+</div>
+                        </Link>
+                    
                     </div>
             </div>
             <div className={style.PhotoSection}>
@@ -39,7 +43,7 @@ const Introduction = () => {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     className={style.ImageMock} >
-                        <Image  src={"/profile.jpg"}  alt="bogdandraghia"  width="100%"  objectFit="cover" height="100%" layout="responsive"/>
+                        <Image priority src={"/profile.jpg"}  alt="bogdandraghia"  width="100%"  objectFit="cover" height="100%" layout="responsive"/>
                     </motion.div>
                     <div className={style.IconShortcutContainer}>
                             <SvgIconHelper name="cv" icon={<Cv width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>
@@ -50,7 +54,6 @@ const Introduction = () => {
                 </div>
             </div>
         </div>
-    </div> 
     )
 }
 export default Introduction

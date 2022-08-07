@@ -1,14 +1,11 @@
 import style from "../src/components/projects/projects.module.css"
 import Image from "next/image"
 
-import Button from "../src/components/assets/Button"
 import RefreshSvg from "../src/props/images/refresh.svg"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
 import axios from "axios"
-
-
 
 const Projects = ({projects,categories,envUrls}) => {
   const [activeFilter, setActiveFilter] = useState([])
@@ -49,7 +46,6 @@ const Projects = ({projects,categories,envUrls}) => {
     }
   }).filter(project => project.attributes.content.toLowerCase().includes(searchDesc.toLowerCase()))
   const handleSearchChange = ({ target }) => setSearchDesc(target.value);
-
   return (
     <div className={style.projectContainer}>
       <h1>Projects</h1>
@@ -70,7 +66,6 @@ const Projects = ({projects,categories,envUrls}) => {
           onClick={()=>{
             handleResetFilter()
           }}
-          
           className={style.resetButtonContainer}>
             <Image objectFit="cover" width="50px" height="50px" src={RefreshSvg} alt="refresh" />
           </div> 
@@ -98,7 +93,6 @@ const Tag = ({ data }) => {
     </div>
   )
 }
-
 const ProjectItem = ({ data,urls}) => {
   console.log(urls)
   return (
@@ -108,15 +102,13 @@ const ProjectItem = ({ data,urls}) => {
       exit={{ opacity: 0 }}
       className={style.projectItem}>
       <div className={style.projectItemPhoto}>
-        <Image src={`${urls.provider}${data.attributes.image}`} width="250" height="250"  alt="profile" />
+        <Image src={`${urls.provider}${data.attributes.image}`} width="350" height="350" objectFit="cover" alt="profile" />
       </div>
       <div className={style.projectItemInfo}>
         <div className={style.pItemTittle}>
           <h2>{data.attributes.title}</h2>
 
-          <p>
-            {data.attributes.content.length > 100 ? (<div>{data.attributes.content.slice(0,data.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{data.attributes.content.length}</div>)}
-          </p>
+            {data.attributes.content.length > 100 ? (<p>{data.attributes.content.slice(0,data.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</p>):(<p>{data.attributes.content}</p>)}
         </div>
         <div className={style.pItemTags}>
           {
@@ -136,7 +128,6 @@ const ProjectItem = ({ data,urls}) => {
     </motion.div>
   )
 }
-
 export async function getStaticProps() {
   const res = await axios.get(`${process.env.BACKEND_URL}/api/projects?populate=%2A`)
 

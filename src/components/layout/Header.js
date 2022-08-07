@@ -21,7 +21,7 @@ const Header = () => {
     }
     const dropwdownBlock ={
         up: { height: 0, opacity:0},
-        down: { height: 120, opacity:1}
+        down: { height: "fit-content", opacity:1}
     }
     
     const [changeTheme, setChangeTheme] = useState(true)
@@ -127,9 +127,9 @@ const Header = () => {
                                             Illustrations
                                         </li>
                                     </Link>
-                                    <li  onClick={() => toggleButtonBurger()}>
+                                    {/* <li  onClick={() => toggleButtonBurger()}>
                                         Others
-                                    </li>
+                                    </li> */}
                                 </motion.ul>
 
                         </li>

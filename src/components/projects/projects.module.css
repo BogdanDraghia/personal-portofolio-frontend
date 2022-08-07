@@ -50,6 +50,7 @@
     flex-direction: column;
 }
 .projectItem{
+    
 /* Auto layout */
 display: flex;
 flex-direction: row;
@@ -61,7 +62,8 @@ gap: 10px;
 width: 773px;
 height: 300px;
 
-background: #FF897A;
+background-color: var(--box-color);
+
 border-radius: var(--border2);
 
 /* Inside auto layout */
@@ -75,26 +77,19 @@ box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.06);
 .projectItemPhoto {
     border-radius: var(--border2);
     overflow: hidden;
-width: 250px;
-height: 250px;
-
+    height: 100%;
   }
 
 .projectItemInfo{
-    color: #ffffff;
+    color: var(--h1-text-color);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-start;
     padding: 10px;
     gap: 5px;
-    
     width: 450px;
     height: 100%;
-    
-    
-    
-
 }
 
 .pItemLinks>
@@ -110,6 +105,7 @@ height: 250px;
 }
 /* ITEM INFO  */
 .pItemTags{
+    color: var(--navbar-text-color);
     gap:10px;
     display: flex;
     flex-direction: row;
@@ -209,11 +205,11 @@ height: 250px;
 @media (max-width: 425px) {
     
     .projectContainer{
-        width: 100%;
         max-width: initial;
     }
     .projectItemPhoto{
-        border-radius: var(--border1);
+
+        border-radius: var(--border2);
         overflow: hidden;
         
     }
@@ -232,10 +228,20 @@ height: 250px;
         flex-wrap: wrap;
     }
     .projectItem{
+        width: 100%;
+        height: fit-content;
         max-width: 400px;
         flex-direction: column;
     }
     .projectItemPhoto{
+        height: 100%;
+        max-height: 300px;
+        
+    }
+    .projectItemInfo{
+        height: fit-content;
+        justify-content: flex-start;
+        gap:15px;
         width: 100%;
     }
     .subTagContainer{

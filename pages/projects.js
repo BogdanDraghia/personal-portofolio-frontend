@@ -108,15 +108,13 @@ const ProjectItem = ({ data,urls}) => {
       exit={{ opacity: 0 }}
       className={style.projectItem}>
       <div className={style.projectItemPhoto}>
-        <Image src={`${urls.provider}${data.attributes.image}`} width="250" height="250"  alt="profile" />
+        <Image src={`${urls.provider}${data.attributes.image}`} width="350" height="350" objectFit="cover" alt="profile" />
       </div>
       <div className={style.projectItemInfo}>
         <div className={style.pItemTittle}>
           <h2>{data.attributes.title}</h2>
 
-          <p>
-            {data.attributes.content.length > 100 ? (<div>{data.attributes.content.slice(0,data.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{data.attributes.content.length}</div>)}
-          </p>
+            {data.attributes.content.length > 100 ? (<p>{data.attributes.content.slice(0,data.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</p>):(<p>{data.attributes.content}</p>)}
         </div>
         <div className={style.pItemTags}>
           {

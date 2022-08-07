@@ -8,7 +8,7 @@
 /* NAVBAR */
 
 .logo {
-    color: var(--Accent);
+    color: var(--accent);
     max-width: 100px;
   }
   .logo > img {
@@ -32,11 +32,15 @@
   
   .navbar > div > ul > li {
     margin: 0 10px;
+   
     padding: 10px 10px;
+  }
+  .navbar>div>ul{
+    color:var(--text-color-1)
   }
   .menuText{
     cursor: pointer;
-    color:var(--txt-default)
+    color:var( --navbar-text-color)
   }
   .changethemeli{
     margin:0px !important;
@@ -61,7 +65,7 @@
   
   .navMenu>li{
     padding: 20px 10px;
-    border-radius: 10px;
+    border-radius: var(--border2);
   }
   .dropdownTrue {
     position: relative;
@@ -72,14 +76,13 @@
     box-shadow: var(--box-shadow);
     margin-top: 35px;
     z-index: 200;
-    border-radius: 10px;
+    border-radius: var(--border2);
     padding:0px;
     overflow: hidden;
     height: 100%;
-    background-color: red;
     position: absolute;
     list-style-type: none;
-    background-color: var(--SiteBackground);
+    background-color: var(--box-color);
   }
   .listItem{
     display: flex;
@@ -96,7 +99,7 @@
     width: 45px;
     height: 22px;
     border-radius: 24px;
-    border: 3px solid #f2f2f2;
+    border: 3px solid var(--grey1);
     margin: 10px;
     position: relative;
     display: flex;
@@ -110,7 +113,7 @@
     position: absolute;
     left: -4px;
     border-radius: 50%;
-    background-color: var(--Accent);
+    background-color: var(--accent);
     transition: transform 0.3s cubic-bezier(0.4, 0.03, 0, 1);
     cursor: pointer;
     display: flex;
@@ -134,7 +137,7 @@
   .burgerLine{
     display: block;
     width: 25px;
-    background-color: var(--Accent);
+    background-color: var(--accent);
     height: 5px;
     margin-top: 3px;
     border-radius: 2px;
@@ -152,10 +155,10 @@
   }
   
   .dropdownBlock{
-    color:var(--txt-default);
+    color:var(--navbar-text-color);
     height: 100%;
     position: relative;
-    border-radius: 10px;
+    border-radius: var(--border2);
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -172,7 +175,7 @@
     transition: transform 200ms linear 0s;
     height: 3px;
     position: absolute;
-    background-color: var(--Accent);
+    background-color: var(--accent);
   
   }
   .dropdownArrowLine2{
@@ -181,7 +184,7 @@
     height: 3px;
     left: 10px;
     position: absolute;
-    background-color: var(--Accent);
+    background-color: var(--accent);
   }
   
   
@@ -192,7 +195,7 @@
     text-align:center;
     padding:15px;
     margin-top:auto;
-    color:var(--txt-default);
+    color:var(--text-color-2);
   }
 
 

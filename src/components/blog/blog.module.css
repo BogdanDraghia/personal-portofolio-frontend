@@ -13,7 +13,7 @@
 .lastPostSection{
     margin: 50px;
     display: flex;
-    border-radius: 20px;
+    border-radius: var(--border1);
     background-color: var(--bg-c1);
     flex-direction: row;
     justify-content: space-around;
@@ -24,7 +24,7 @@
     margin: 30px 10px;
     max-width: 400px;
     width: 100%;
-    border-radius: 20px;
+    border-radius: var(--border1);
     overflow: hidden;
 }
 .blogItemLastText{
@@ -35,9 +35,9 @@
     max-width: 400px;
 }
 .button{
-    background-color: var(--Accent);
+    background-color: var(--accent);
     border: none;
-    border-radius: 10px;
+    border-radius: var(--border2);
     font-size: 16px;
     color: white;
     margin: 20px 0;
@@ -49,7 +49,7 @@
 
 .postSection{
     margin:60px 50px;
-    border-radius: 20px;
+    border-radius: var(--border1);
     background-color: var(--bg-c1);
     display: flex;
     flex-wrap: wrap;
@@ -62,7 +62,7 @@
 }
 .blogItemImage{
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: var(--border1);
     max-width: 400px;
     width: 100%;
 }

@@ -1,34 +1,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700&display=swap');
 :root{
   --box-shadow:rgb(0 0 0 / 4%) 0px 8px 16px, rgb(0 0 0 / 8%) 0px 4px 8px;
-  --SiteBackground:#ffff;
-  --Accent:#6aa7e8;
-  --bg-dark: #1c2128;
-  --bg-white: #ffff;
-  --txt-white:#ffff;
-  --txt-dark:#15191d;
-  --txt-grey:#646f79;
-  --moon-color:#ffff;
-  --bg-c1:#f6f8f9;
+  --site-background-light:#f9fafb;
+  --site-background-dark:#101214;
+  /* ELEMENTS */
+  --h1-text-color:#272727;
+  --h1-text-size:32px;
+  /* COLORS */
+  --accent:#6aa7e8;
+  --white:#ffff;
+  --grey1:#f2f2f2;
+  --grey2:#898b8d;
+  --grey3:#646f79;
+  --grey4:#4b4b4b;
+  --grey5:#646f79;
+  --grey6:#272727;
+  --dark-grey1:#cfd5dd;
+  --dark-grey2:#8796ab;
+  --dark-grey3:#323b48;
+  /* Others */
+  --border1:20px;
+  --border2:10px;
+
 }
 
+
+.lightmode {
+  --siteBackground: var(--site-background-light);
+  --moon-color: #ffff;
+  --h1-text-color:var(--grey6);
+  --box-color:var(--white);
+  --navbar-text-color:var(--grey3);
+  --text-color-1:var(--grey6);
+  --text-color-2:var(--grey3);
+
+}
 
 .darkmode {
-  --SiteBackground: var(--bg-dark);
+  --siteBackground: var(--site-background-dark);
   --moon-color: #f7ec87;
-  --bg-c1:var(--bg-dark);
-  --txt-default: var(--txt-white);
-
+  --h1-text-color:var(--white);
+  --box-color:var(--dark-grey3);
+  --navbar-text-color:var(--white);
+  --text-color-1:var(--white);
+  --text-color-2:var(--grey1);
 }
-.lightmode {
-  --SiteBackground: var(--bg-white);
-  --moon-color: #ffff;
-  --bg-c1:#f6f8f9;
-  --txt-default: var(--txt-dark);
 
-}
 .accent{
-  color: var(--Accent);
+  color: var(--accent);
 }
 
 *, :after, :before {
@@ -37,9 +56,9 @@
 
 html,
 body {
-  color:var(--txt-1c2128);
+  color:var(--txt-1);
   padding: 0;
-  background-color: var(--SiteBackground);
+  background-color: var(--siteBackground);
   margin: 0;
   font-family: 'Noto Sans', sans-serif;
 }
@@ -64,7 +83,9 @@ body{
   max-width: calc(100% - 5em);
   width: 70em;
 }
-
+h1{
+  font-size: var(--h1-text-size);
+}
 a {
   color: inherit;
   text-decoration: none;

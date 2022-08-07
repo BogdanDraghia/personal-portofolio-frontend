@@ -46,16 +46,16 @@
   .buttonFilled{
     margin: 20px 0;
     padding: 10px 20px;
-    background-color: var(--Accent);
+    background-color: var(--accent);
     font-size: 16px;
     width: 150px;
     text-align: center;
     color: #fff;
     border: none;
-    border-radius: 10px;
+    border-radius: var(--border2);
   }
   .buttonNoFill{
-    color: var(--Accent);
+    color: var(--accent);
   }
 
 

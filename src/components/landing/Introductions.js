@@ -7,7 +7,7 @@ import Github from "../../props/icons/github"
 import Instagram from "../../props/icons/instagram"
 import Linkedin from "../../props/icons/linkedin"
 import Button from "../assets/Button"
-
+import Link from 'next/link'
 import SvgIconHelper from "../../components/assets/SvgIconHelper"
 import { motion } from "framer-motion";
 
@@ -23,13 +23,18 @@ const Introduction = () => {
                     <h1>Full-stack developer</h1>
                     <p>I want to share the knowledge that I have acquired so far and I am willing to learn many new things.</p>
                     <div className={style.buttonGroup}>
-                        <div
-                        
-                        >
-                            <Button text="My work" fill="var(--Accent)" colortxt="white"/>
-
+                        <Link href="/projects" passHref>
+                        <div>
+                            <Button text="My work" fill="var(--accent)" colortxt="white"/>
                         </div>
-                        <Button text="Contact" hover={false} colortxt="var(--Accent)"/>
+                        </Link>
+                        <Link href="/contact" passHref>
+<div>
+
+                        <Button text="Contact" hover={false} colortxt="var(--accent)"/>
+</div>
+                        </Link>
+                    
                     </div>
             </div>
             <div className={style.PhotoSection}>

@@ -1,95 +1,159 @@
-.contactContainer{
+.contactContainer {
   width: 100%;
   height: auto;
+  display: flex;
+  align-content: center;
+  align-items: center;
 }
-.subContactContainer{
-  align-items: flex-start;
+
+.subContactContainer {
   margin: 0 auto;
   max-width: calc(100% - 5em);
   width: 70em;
   display: flex;
-  margin-top: 100px;
+  gap: 150px;
+  height: fit-content;
   justify-content: center;
   flex-grow: 1;
-  height: 100%;
 }
-.contactBox{
+
+.contactBox {
   display: flex;
   flex-direction: column;
   max-width: 350px;
   width: 100%;
-height: fit-content;
+  height: fit-content;
 }
 
-.iconsBox{
+.contactBoxTextContainer {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.formBox{
-  background-color: white;
 
+.contactBoxBoxTextSubContainer {
+  color: var(--text-color-1);
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contactBoxBoxTextSubContainer>h1 {
+  font-size: 42px;
+  margin: 10px 0px;
+}
+
+.contactBoxBoxTextSubContainer>p {
+  font-size: 16px;
+}
+
+.iconsBox {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.formBox {
+  background-color: var(--box-color);
   box-shadow: var(--box-shadow2);
   border-radius: var(--border2);
-
   display: flex;
   padding: 20px;
-  
+
 }
-.form{
+
+.form {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.groupLabelInput{
   display: flex;
   flex-direction: column;
 }
 
-.formWrap{
+.groupLabelInput {
   display: flex;
   flex-direction: column;
-  margin:4px 0px;
+}
+
+.formWrap {
+  display: flex;
+  flex-direction: column;
+  margin: 4px 0px;
   width: 100%;
 }
-.formWrap>label{
-  font-size:14px;
-  margin:5px 0px;
+
+.formWrap>label {
+  color: var(--text-color-1);
+  font-size: 14px;
+  margin: 5px 0px;
 }
-.formWrap>input{
-  height:40px;
+
+.formWrap>input {
+  height: 40px;
   font-size: 16px;
   line-height: 28px;
   padding: 8px 16px;
   width: 100%;
   min-height: 44px;
   border: unset;
+  background-color: var(--contact-input);
+  border: var(--border-input);
   border-radius: 4px;
   outline-color: rgb(84 105 212 / 0.5);
-  background-color: #F4F4F4;
 }
-.formWrap>textarea{
+
+.formWrap>textarea {
   width: 100%;
   min-height: 100px;
   border: unset;
   border-radius: 4px;
   resize: vertical;
-
-  outline-color: rgb(84 105 212 / 0.5);
-  background-color: #F4F4F4;
+  background-color: var(--contact-input);
+  border: var(--border-input);
+  outline-color: var(--accent);
 }
-.buttonForm{
+
+.buttonForm {
   min-height: 40px;
   max-width: 150px;
-  border:none;
+  border: none;
   border-radius: var(--border2);
-  color:#fff;
+  color: #fff;
   font-size: 16px;
   background-color: var(--accent);
-  margin:10px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
-.iconComponent{
+
+.iconComponent {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .subContactContainer {
+    padding: 30px 0px;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+  }
+
+  .contactBoxBoxTextSubContainer>h1 {
+    font-size: var(--h1-text-sizeS);
+    align-self: center;
+  }
+
+  .contactContainer {
+    align-items: flex-start;
+  }
+
+  .contactBoxTextContainer {
+    text-align: center;
+    align-self: center;
+    max-width: 350px;
+    align-items: center;
+  }
+
 }

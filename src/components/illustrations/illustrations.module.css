@@ -23,7 +23,11 @@
     margin: 15px;
 }
 /* OVERLAY SECTION */
-
+.IllustrationItem>img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
 .IllustrationOverlay{
       
     position: fixed;
@@ -130,6 +134,11 @@
 .imageOverlay{
     position: relative;
     width: 100%;
+}
+.imageOverlay>img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
 }
 .notification{
     display: flex;

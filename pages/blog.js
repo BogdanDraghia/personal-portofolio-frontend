@@ -1,4 +1,3 @@
-import Image from "next/image"
 import style from "../src/components/blog/blog.module.css"
 import Link from "next/link"
 import {motion} from "framer-motion"
@@ -10,7 +9,7 @@ const BlogHighLight = ({dataPost})=>{
         <Link href={'/blog/' + dataPost.attributes.slug} passHref>
             <a className={style.lastPostSection}>
                 <div className={style.blogItemLastImage}>
-                    <Image src={dataPost.attributes.thumbnailUrl} alt="mockphoto" width="400px" height="300px" objectFit="cover"/>    
+                    <img src={dataPost.attributes.thumbnailUrl} alt="mockphoto" width="400px" height="300px" />    
                 </div> 
                 <div className={style.blogItemLastText}>
                     <h1>{dataPost.attributes.title}</h1>
@@ -29,7 +28,7 @@ const BlogItem = ({dataPost})=>{
             whileHover={{scale:1.02}}
             className={style.blogItem}>
             <div className={style.blogItemImage}>
-                <Image src={dataPost.attributes.thumbnailUrl} width="400px" height="300px" objectFit="cover" alt="profile"/>
+                <img src={dataPost.attributes.thumbnailUrl} width="400px" height="300px"  alt="profile"/>
             </div>
             <div className={style.blogItemText}>
                 <h1>{dataPost.attributes.title}</h1>

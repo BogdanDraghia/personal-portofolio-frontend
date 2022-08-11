@@ -1,7 +1,5 @@
 import style from "../src/components/projects/projects.module.css"
-import Image from "next/image"
 
-import RefreshSvg from "../src/props/images/refresh.svg"
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
@@ -67,7 +65,7 @@ const Projects = ({projects,categories,envUrls}) => {
             handleResetFilter()
           }}
           className={style.resetButtonContainer}>
-            <Image objectFit="cover" width="50px" height="50px" src={RefreshSvg} alt="refresh" />
+            <img  width="50px" height="50px" src={"/images/refresh.svg"} alt="refresh" />
           </div> 
           </div>
         </div>
@@ -102,7 +100,7 @@ const ProjectItem = ({ data,urls}) => {
       exit={{ opacity: 0 }}
       className={style.projectItem}>
       <div className={style.projectItemPhoto}>
-        <Image src={`${urls.provider}${data.attributes.image}`} width="350" height="350" objectFit="cover" alt="profile" />
+        <img src={`${urls.provider}${data.attributes.image}`} width="350" height="350"  alt="profile" />
       </div>
       <div className={style.projectItemInfo}>
         <div className={style.pItemTittle}>

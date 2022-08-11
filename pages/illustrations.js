@@ -1,5 +1,4 @@
 import style from "../src/components/illustrations/illustrations.module.css"
-import Image from "next/image"
 import {useState,useEffect} from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import axios from "axios"
@@ -16,7 +15,7 @@ const IllustrationItem = (props)=>{
                 <div ></div>
                 <div ></div>
             </div>
-            <Image src={`${props.providerUrl}${props.image}`}   width="300px" height="300" objectFit="cover" alt="profile" />
+            <img src={`${props.providerUrl}${props.image}`}   width="300px" height="300" alt="profile" />
         </motion.div>
     )
 }
@@ -78,7 +77,7 @@ const IllustrationOverlay = (props)=>{
                             }
                            
                         </AnimatePresence>
-                        <Image src={`${props.providerUrl}${props.data.attributes.image}`}   width="400px" height="400px" objectFit="cover" alt="profile" />
+                        <img src={`${props.providerUrl}${props.data.attributes.image}`}   width="400px" height="400px"  alt="profile" />
                     </div>
                     <div className={style.palette}>
                         {props.data.attributes.pallete.map((item,index)=>(

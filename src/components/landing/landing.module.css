@@ -6,7 +6,11 @@
     overflow: hidden;
     background-color: var(--grey1);
 }
-
+.ImageMock>img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
 .center {
     padding: 100px 0;
     display: flex;

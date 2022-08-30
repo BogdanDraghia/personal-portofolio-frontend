@@ -5,7 +5,6 @@ import Test from "./TestElement"
 const blogPage = ({ backendUrl,title, content, thumbnailUrl }) => {
     return (
         <div className={style.containerBlogPost}>
-
             <div className={style.imageBlogPost}>
                 <BlogPhotoFullSize thumbnailUrl={thumbnailUrl} backendUrl={backendUrl} />
             </div>
@@ -15,19 +14,12 @@ const blogPage = ({ backendUrl,title, content, thumbnailUrl }) => {
                             Lorem ipsum,10 minute read
                         </p>
                 </div>
-                {/* <div className={style.shareSection}>
-                        <div className={style.icon}></div>
-                        <div className={style.icon}></div>
-                        <div className={style.icon}></div>
-
-                </div> */}
             </div>
             <h1>
                 {title}
             </h1>
             <div>
-                
-                    {content}
+                {content}
             </div>
         </div>
     )

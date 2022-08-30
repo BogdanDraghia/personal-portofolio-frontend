@@ -9,7 +9,6 @@
   --h1-text-color: #272727;
   --h1-text-sizeL: 32px;
   --h1-text-sizeS: 28px;
-
   /* COLORS */
   --accent: #6aa7e8;
   --white: #ffff;
@@ -25,7 +24,7 @@
   /* Others */
   --border1: 20px;
   --border2: 10px;
-  --borderinput: 1px solid #F2F2F2;
+  --border-input: 1px solid #F2F2F2;
 }
 
 
@@ -39,7 +38,6 @@
   --text-color-2: var(--grey3);
   --contact-input: var(--white);
   --border-input: 1px solid #F2F2F2;
-
 }
 
 .darkmode {

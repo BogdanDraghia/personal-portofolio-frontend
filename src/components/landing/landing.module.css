@@ -8,7 +8,6 @@
 }
 .ImageMock>img{
     object-fit: cover;
-    height: 100%;
     width: 100%;
 }
 .center {
@@ -58,7 +57,8 @@
 
 .IconShortcutContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
 }
 
 .IconShortcutContainer>a {
@@ -109,24 +109,22 @@
     }
 
     .IconShortcutContainer {
-
-        margin: 10px 0px;
+        width: 100%;
+        margin: 10px 25px;
+        justify-content: space-evenly;
         flex-wrap: wrap;
-        justify-content: left;
     }
 
     .IconShortcutContainer>a {
         text-align: center;
-        margin: 5px;
+        margin: 10px;
     }
 
     .ImageMock {
         width: 100%;
-        height: inherit;
     }
 
     .PhotoSection {
-        padding: 0px 20px;
         width: 100%;
     }
 
@@ -134,12 +132,19 @@
         text-align: center;
         margin: 5px;
     }
-
+    .subPhotoSection{
+        padding: 0 20px;
+    }
+    .txtSection>h1{
+        margin: 0;
+    }
     .center {
+        max-width: initial; 
+        width: initial;
         padding: 10px 0;
         width: initial;
         margin: inherit;
-        margin: 0px 20px;
+        margin: 0px 5px;
         max-width: inherit;
     }
 }

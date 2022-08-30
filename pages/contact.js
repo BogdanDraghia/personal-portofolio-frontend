@@ -13,9 +13,11 @@ const Contact = () => {
       <div className={style.contactBoxTextContainer}>
           <div className={style.contactBoxBoxTextSubContainer}>
             <h1>
-            Get in touch
+              Get in touch
             </h1>
-            <p>If you want to create something, don't hesitate to contact </p>
+            <p>
+              If you want to create something, don't hesitate to contact   
+            </p>
           </div>
       </div>
 
@@ -30,7 +32,6 @@ const Contact = () => {
           <div className={style.iconComponent}>
             <SvgIconHelper name="email" icon={<Twitter  />} pass={"https://github.com/bogdandraghia"} />
           </div>
-
         </div>
         <div className={style.formBox}>
           <form className={style.form}>
@@ -65,12 +66,11 @@ const Contact = () => {
               />
             </div>
             <button className={style.buttonForm}>
-              Lorem ipsum
+              Send
             </button>
           </form>
         </div>
       </div>
-
       </div>
     </div>
 

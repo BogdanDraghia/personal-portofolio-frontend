@@ -37,13 +37,10 @@ const Introduction = () => {
             </div>
             <div className={style.PhotoSection}>
                 <div className={style.subPhotoSection}>
-                    <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    <div
                     className={style.ImageMock} >
                         <img  src={"/profile.jpg"}  alt="bogdandraghia"  width="100%"  height="100%" layout="responsive"/>
-                    </motion.div>
+                    </div>
                     <div className={style.IconShortcutContainer}>
                             <SvgIconHelper name="cv" icon={<Cv width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>
                             <SvgIconHelper name="github" icon={<Github width="60px" height="60px" />} pass={"https://github.com/bogdandraghia"}/>

@@ -34,13 +34,18 @@ const Contact = () => {
           </div>
         </div>
         <div className={style.formBox}>
-          <form className={style.form}>
+          <form 
+          
+          action="https://formspree.io/f/mrgdbvbz"
+          method="POST"
+          className={style.form}>
             <div className={style.formWrap}>
               <label htmlFor="formname">
                 Name
               </label>
               <input
                 type="text"
+                name="name"
                 id="formname"
                 required
               />
@@ -50,7 +55,8 @@ const Contact = () => {
                 Email
               </label>
               <input
-                type="text"
+                type="email"
+                name="email"
                 id="formname"
                 required
               />
@@ -60,12 +66,15 @@ const Contact = () => {
                 Message
               </label>
               <textarea
+                name="message"
                 type="textarea"
                 id="formname"
                 required
               />
             </div>
-            <button className={style.buttonForm}>
+            <button
+            type="submit"
+            className={style.buttonForm}>
               Send
             </button>
           </form>

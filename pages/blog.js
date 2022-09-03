@@ -3,18 +3,19 @@ import Link from "next/link"
 import {motion} from "framer-motion"
 import axios from "axios"
 
-const BlogHighLight = ({dataPost})=>{
+const BlogHighLight = ({dataPost,highlight=true})=>{
     console.log(dataPost)
     return(
         <Link href={'/blog/' + dataPost.attributes.slug} passHref>
-            <a className={style.lastPostSection}>
+            <a className={style.lastPostSection} style= {!highlight?{boxShadow:"none"}:{}}>
                 <div className={style.blogItemLastImage}>
                     <img src={dataPost.attributes.thumbnailUrl} alt="mockphoto" width="400px" height="300px" />    
                 </div> 
                 <div className={style.blogItemLastText}>
-                    <h1>{dataPost.attributes.title}</h1>
-                    <p>{dataPost.attributes.content.length > 100 ? (<div>{dataPost.attributes.content.slice(0,dataPost.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{dataPost.attributes.content}</div>)}</p>
-                    <div className={style.buttton}>Read more</div>     
+                    <h2>{dataPost.attributes.title}</h2>
+                    {dataPost.attributes.content.length > 20 ? (<div>{dataPost.attributes.content.slice(0,dataPost.attributes.content.slice(0,120).lastIndexOf(" "))+"..."}</div>):(<div>{dataPost.attributes.content}</div>)}
+                    
+                    <button className={style.blogbutton}>Read more</button>
                 </div>
             </a>
         </Link>
@@ -45,13 +46,13 @@ const BlogContainer = ({posts,backendUrl})=>{
             <div className={style.centerSection}>
                 <div className={style.subContentContainer}>
 
-                <BlogHighLight dataPost={posts[0]} backendUrl={backendUrl}/>
+                <BlogHighLight dataPost={posts[0]} backendUrl={backendUrl} highlight={true} />
                 </div>
                 <div className={style.subContentContainer}>
                 <div className={style.postSection}>
                     {
                         posts.slice(1).map((post,index)=>(
-                            <BlogItem dataPost={post} backendUrl={backendUrl} key={index}/>
+                            <BlogHighLight dataPost={post} backendUrl={backendUrl} highlight={false} key={index}/>
                         ))
                     }
                 </div>

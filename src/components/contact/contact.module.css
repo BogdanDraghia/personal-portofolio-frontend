@@ -94,6 +94,7 @@
   height: 40px;
   font-size: 16px;
   line-height: 28px;
+  color: var(--text-color-1);
   padding: 8px 16px;
   width: 100%;
   min-height: 44px;
@@ -105,12 +106,14 @@
 }
 
 .formWrap>textarea {
+  color: var(--text-color-1);
   width: 100%;
   min-height: 100px;
   padding: 8px 16px;
+  font-family: 'Noto Sans', sans-serif;
+
   font-size: 14px;
   border: unset;
-  color: var(--text-color-0);
   border-radius: 4px;
   resize: vertical;
   background-color: var(--contact-input);

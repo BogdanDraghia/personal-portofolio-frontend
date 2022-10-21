@@ -3,7 +3,8 @@
 const CoursesPage = () => {
 	return (<div>
 		Next release
-	</div>)
+    
+    </div>)
 }
 
 export default CoursesPage

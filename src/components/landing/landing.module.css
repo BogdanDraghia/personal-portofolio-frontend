@@ -5,10 +5,12 @@
     overflow: hidden;
     background-color: var(--grey1);
 }
-.ImageMock>img{
+
+.ImageMock>img {
     object-fit: cover;
     width: 100%;
 }
+
 .center {
     padding: 100px 0;
     display: flex;
@@ -28,10 +30,12 @@
     max-width: 400px;
     flex-direction: column;
 }
-.txtSection>h1{
-    margin:10px 0px;
+
+.txtSection>h1 {
+    margin: 10px 0px;
     font-size: var(--h1-text-sizeL);
 }
+
 .buttonGroup {
     display: flex;
     flex-direction: row;
@@ -50,7 +54,7 @@
 /* RIGHT SECTION */
 .PhotoSection {
     display: flex;
-    max-width: 400px;
+    width: 400px;
     flex-direction: column;
 }
 
@@ -105,7 +109,8 @@
         padding: 0px 20px;
         width: 100%;
     }
-    .txtSection>h1{
+
+    .txtSection>h1 {
         font-size: var(--h1-text-sizeS);
     }
 
@@ -133,14 +138,17 @@
         text-align: center;
         margin: 5px;
     }
-    .subPhotoSection{
+
+    .subPhotoSection {
         padding: 0 20px;
     }
-    .txtSection>h1{
+
+    .txtSection>h1 {
         margin: 0;
     }
+
     .center {
-        max-width: initial; 
+        max-width: initial;
         width: initial;
         padding: 10px 0;
         width: initial;
@@ -148,18 +156,20 @@
         margin: 0px 5px;
         max-width: inherit;
     }
-    .buttonGroup{
+
+    .buttonGroup {
         justify-content: center;
     }
 
 }
 
 @media (max-width: 305px) {
-    .buttonGroup{
+    .buttonGroup {
         display: flex;
-    justify-content: center;
+        justify-content: center;
     }
-    .button{
+
+    .button {
         width: 100%;
     }
 }

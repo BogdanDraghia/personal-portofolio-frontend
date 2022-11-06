@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 const Refresh = (props) => (
   <svg
@@ -16,6 +16,6 @@ const Refresh = (props) => (
       fillOpacity={0.54}
     />
   </svg>
-)
+);
 
-export default Refresh
+export default Refresh;

@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 const Search = (props) => (
   <svg
@@ -16,6 +16,6 @@ const Search = (props) => (
       fillOpacity={0.54}
     />
   </svg>
-)
+);
 
-export default Search
+export default Search;

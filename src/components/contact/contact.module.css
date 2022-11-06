@@ -40,12 +40,12 @@
   flex-direction: column;
 }
 
-.contactBoxBoxTextSubContainer>h1 {
+.contactBoxBoxTextSubContainer > h1 {
   font-size: 42px;
   margin: 10px 0px;
 }
 
-.contactBoxBoxTextSubContainer>p {
+.contactBoxBoxTextSubContainer > p {
   font-size: 16px;
 }
 
@@ -63,7 +63,6 @@
   border-radius: var(--border2);
   display: flex;
   padding: 20px;
-
 }
 
 .form {
@@ -84,13 +83,13 @@
   width: 100%;
 }
 
-.formWrap>label {
+.formWrap > label {
   color: var(--text-color-1);
   font-size: 14px;
   margin: 5px 0px;
 }
 
-.formWrap>input {
+.formWrap > input {
   height: 40px;
   font-size: 16px;
   line-height: 28px;
@@ -105,12 +104,12 @@
   outline-color: rgb(84 105 212 / 0.5);
 }
 
-.formWrap>textarea {
+.formWrap > textarea {
   color: var(--text-color-1);
   width: 100%;
   min-height: 100px;
   padding: 8px 16px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 
   font-size: 14px;
   border: unset;
@@ -146,7 +145,7 @@
     align-items: center;
   }
 
-  .contactBoxBoxTextSubContainer>h1 {
+  .contactBoxBoxTextSubContainer > h1 {
     font-size: var(--h1-text-sizeS);
     align-self: center;
   }
@@ -161,5 +160,4 @@
     max-width: 350px;
     align-items: center;
   }
-
 }

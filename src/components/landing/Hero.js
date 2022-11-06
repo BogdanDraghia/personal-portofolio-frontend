@@ -1,19 +1,20 @@
-import style from "./landing.module.css";
+import style from "./hero.module.css";
+import Link from "next/link";
 
 // ICONS
 import Cv from "../../props/icons/cv";
 import Github from "../../props/icons/github";
 import Instagram from "../../props/icons/instagram";
 import Linkedin from "../../props/icons/linkedin";
-import Button from "../assets/Button";
-import Link from "next/link";
-import SvgIconHelper from "../../components/assets/SvgIconHelper";
-import { motion } from "framer-motion";
 
-const Introduction = () => {
+// ASSETS
+import Button from "../assets/Button";
+import SvgIconHelper from "../assets/SvgIconHelper";
+
+const Hero = () => {
   return (
-    <div className={style.center}>
-      <div className={style.txtSection}>
+    <div className={style.heroContainer}>
+      <div className={style.contentLeft}>
         <p>Hello, Im Bogdan</p>
         <h1>Full-stack developer</h1>
         <p>
@@ -33,9 +34,9 @@ const Introduction = () => {
           </Link>
         </div>
       </div>
-      <div className={style.PhotoSection}>
+      <div className={style.contentRight}>
         <div className={style.subPhotoSection}>
-          <div className={style.ImageMock}>
+          <div className={style.imageContainer}>
             <img
               src={"/profile.jpg"}
               alt="bogdandraghia"
@@ -48,7 +49,12 @@ const Introduction = () => {
             <SvgIconHelper
               name="cv"
               icon={<Cv width="60px" height="60px" />}
-              pass={"https://github.com/bogdandraghia"}
+              pass={"/cv/CV-BogdanCristianDraghia.pdf"}
+            />
+            <SvgIconHelper
+              name="Linkedin"
+              icon={<Linkedin width="60px" height="60px" />}
+              pass={"https://www.linkedin.com/in/bogdandraghia/"}
             />
             <SvgIconHelper
               name="github"
@@ -56,14 +62,9 @@ const Introduction = () => {
               pass={"https://github.com/bogdandraghia"}
             />
             <SvgIconHelper
-              name="github"
+              name="Instagram"
               icon={<Instagram width="60px" height="60px" />}
-              pass={"https://www.linkedin.com/in/bogdandraghia"}
-            />
-            <SvgIconHelper
-              name="github"
-              icon={<Linkedin width="60px" height="60px" />}
-              pass={"https://www.linkedin.com/in/bogdandraghia/"}
+              pass={"https://www.instagram.com/bogdan_draghia/"}
             />
           </div>
         </div>
@@ -71,4 +72,4 @@ const Introduction = () => {
     </div>
   );
 };
-export default Introduction;
+export default Hero;

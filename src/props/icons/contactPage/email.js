@@ -1,7 +1,7 @@
-import * as React from "react"
+import * as React from "react";
 
 const emailComponent = (props) => (
-    <svg
+  <svg
     width={56}
     height={55}
     fill="none"
@@ -15,6 +15,6 @@ const emailComponent = (props) => (
       fill="#6AA7E8"
     />
   </svg>
-)
+);
 
-export default emailComponent
+export default emailComponent;

@@ -5,7 +5,7 @@
     "dev": "next dev --hostname 0.0.0.0",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint ",
     "analyze": "cross-env ANALYZE=true next build",
     "export": "next build && next export",
     "cypress": "cypress open"
@@ -24,8 +24,10 @@
     "react-syntax-highlighter": "^15.4.5"
   },
   "devDependencies": {
-    "eslint": "8.6.0",
+    "eslint": "^8.6.0",
     "eslint-config-next": "12.0.7",
-    "next-mdx-remote": "^4.1.0"
+    "eslint-config-prettier": "^8.5.0",
+    "next-mdx-remote": "^4.1.0",
+    "prettier": "^2.7.1"
   }
 }

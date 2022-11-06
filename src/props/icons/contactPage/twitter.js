@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 const twitterComponent = (props) => (
   <svg
@@ -13,6 +13,6 @@ const twitterComponent = (props) => (
       fill="#6AA7E8"
     />
   </svg>
-)
+);
 
-export default twitterComponent
+export default twitterComponent;

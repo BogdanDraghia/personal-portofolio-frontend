@@ -1,10 +1,5 @@
-
-
 const CoursesPage = () => {
-	return (<div>
-		Next release
-    
-    </div>)
-}
+  return <div>Next release</div>;
+};
 
-export default CoursesPage
+export default CoursesPage;

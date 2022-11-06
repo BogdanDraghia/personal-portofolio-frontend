@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Introduction from '../src/components/landing/Introductions'
+import Head from "next/head";
+import styles from "../styles/Home.module.css";
+import Hero from "../src/components/landing/Hero";
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -9,7 +9,7 @@ export default function Home() {
         <meta name="description" content="Personal portofolio" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-        <Introduction/>
+      <Hero />
     </div>
-  )
+  );
 }

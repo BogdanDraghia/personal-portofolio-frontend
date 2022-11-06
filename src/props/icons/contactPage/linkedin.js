@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from "react";
 
 const LinkedinComponent = (props) => (
   <svg
@@ -13,6 +13,6 @@ const LinkedinComponent = (props) => (
       fill="#6AA7E8"
     />
   </svg>
-)
+);
 
-export default LinkedinComponent
+export default LinkedinComponent;

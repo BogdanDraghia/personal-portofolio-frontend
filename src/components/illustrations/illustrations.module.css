@@ -1,168 +1,165 @@
-.center{
-    margin: 0 auto;
-    max-width: calc(100% - 5em);
-    width: 70em;
+.center {
+  margin: 0 auto;
+  max-width: calc(100% - 5em);
+  width: 70em;
 }
 
 /* ITEM SECTION */
 
-.IllustrationsGrid{
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.IllustrationsGrid {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.IllustrationItem{
-    cursor:pointer;
-    position: relative;
-    overflow: hidden;
-    width: 300px;
-    height: 300px;
-    border-radius: 15px;
-    background-color: #f2f2f2;
-    margin: 15px;
+.IllustrationItem {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 300px;
+  border-radius: 15px;
+  background-color: #f2f2f2;
+  margin: 15px;
 }
 /* OVERLAY SECTION */
-.IllustrationItem>img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+.IllustrationItem > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
-.IllustrationOverlay{
-      
-    position: fixed;
-        width: 100%;
-    height: 100%;
-    top: 0px;
-    padding: 20px;
-    left: 0px;
-    background-color: #a2a2a2;
-    display: flex;
-    z-index: 3;
-    align-items: center;
-    flex-direction: column;
+.IllustrationOverlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  padding: 20px;
+  left: 0px;
+  background-color: #a2a2a2;
+  display: flex;
+  z-index: 3;
+  align-items: center;
+  flex-direction: column;
 }
-.illustrationMock{
-    background-color: red;
-    width: 200px;
-    height: 200px;
+.illustrationMock {
+  background-color: red;
+  width: 200px;
+  height: 200px;
 }
-.close{
-    background-color: blue;
-    width: 100px;
-    height: 100px;
+.close {
+  background-color: blue;
+  width: 100px;
+  height: 100px;
 }
-.overlayContent{
-    position: relative;
-    max-width:100%; 
-    max-height:100%;
-    background-color: white;
-    padding:40px 35px 15px;
-    margin:auto; 
-    border-radius: var(--border2);
+.overlayContent {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  background-color: white;
+  padding: 40px 35px 15px;
+  margin: auto;
+  border-radius: var(--border2);
 }
-.palette{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.palette {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
-.paletteBox{
-    font-size: 14px;
-    margin: 1em 0.5em;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.paletteBox {
+  font-size: 14px;
+  margin: 1em 0.5em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
-.colorBox{
-    cursor: pointer;
-    height: 60px;
-    width: 60px;
-    text-align: center;
-    margin:5px;
-    border-radius: 5px;
+.colorBox {
+  cursor: pointer;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  margin: 5px;
+  border-radius: 5px;
 }
-.closeHelperContainer{
-    position: absolute;
-    height: 50px;
-    width: 50px;
-    z-index: 300;
-    top: 0;
-    right: 0;
-    align-items: center;
+.closeHelperContainer {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  z-index: 300;
+  top: 0;
+  right: 0;
+  align-items: center;
 }
-.closeHelperCross{
-    cursor: pointer;
-    position: absolute;
-    top:20px;
-    right:20px;
-    display: flex;
-    justify-content: center;
+.closeHelperCross {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
 }
-.closeHelperCross>*{
-    pointer-events: none;
-    width: 20px;
-    position: absolute;
-    display: block;
-    height: 5px;
-    background-color: var(--accent);
-
+.closeHelperCross > * {
+  pointer-events: none;
+  width: 20px;
+  position: absolute;
+  display: block;
+  height: 5px;
+  background-color: var(--accent);
 }
-.helperOpen{
-    pointer-events: none;
-    z-index: 1;
-    display: flex;
-    position: absolute;
-    right: 0;
-    margin: 10px;
+.helperOpen {
+  pointer-events: none;
+  z-index: 1;
+  display: flex;
+  position: absolute;
+  right: 0;
+  margin: 10px;
 }
-.helperOpen>*{
-    width: 7px;
-    border-radius: 50%;
-    margin: 2px;
-    height: 7px;
-    background-color: #efe7da;
+.helperOpen > * {
+  width: 7px;
+  border-radius: 50%;
+  margin: 2px;
+  height: 7px;
+  background-color: #efe7da;
 }
-.notificationContainer{
-    position: absolute;
-    width: 100%;
-    height: 80px;
-    box-shadow: var(--box-shadow);
-    bottom: 0;
-    text-align: center;
-    z-index: 1000;
+.notificationContainer {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  box-shadow: var(--box-shadow);
+  bottom: 0;
+  text-align: center;
+  z-index: 1000;
 }
-.imageOverlay{
-    position: relative;
-    width: 100%;
+.imageOverlay {
+  position: relative;
+  width: 100%;
 }
-.imageOverlay>img{
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+.imageOverlay > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
-.notification{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin:20px;
-    height: 50px;
-    padding: 20px;
-    border-radius: 15px;
-    background-color: #f2f2f2;
+.notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  height: 50px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #f2f2f2;
 }
 
 @media (max-width: 720px) {
-
-    .IllustrationItem{
-        height:100%;
-    }
+  .IllustrationItem {
+    height: 100%;
+  }
 }
-@media (max-width: 425px){
-    .palette{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .paletteBox{
-        margin:2px;
-    }
+@media (max-width: 425px) {
+  .palette {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .paletteBox {
+    margin: 2px;
+  }
 }

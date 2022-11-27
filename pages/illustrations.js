@@ -31,8 +31,6 @@ const IllustrationItem = (props) => {
 };
 
 const IllustrationOverlay = (props) => {
-  console.log("---------");
-  console.log(props);
   const [copynotification, setCopyNotification] = useState(false);
   const copyColor = (elem) => {
     navigator.clipboard.writeText(elem);
@@ -49,7 +47,6 @@ const IllustrationOverlay = (props) => {
     const [r, g, b] = hex.match(/\w\w/g).map((x) => parseInt(x, 16));
     return `rgba(${r},${g},${b},${alpha})`;
   };
-  console.log(props);
   return (
     <AnimatePresence>
       {props.render && (
@@ -129,7 +126,6 @@ const Illustrations = ({ illustrations, providerUrl }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentItemData, setCurrentItemData] = useState(undefined);
   const handleOverlay = (index) => {
-    console.log(index);
     setCurrentItemData(illustrations[index]);
     setIsOpen(!isOpen);
   };
@@ -173,7 +169,6 @@ const Illustrations = ({ illustrations, providerUrl }) => {
 export async function getStaticProps() {
   const res = await axios.get(`${process.env.BACKEND_URL}/api/illustrations`);
   const providerUrl = process.env.PROVIDER_URL;
-  console.log(process.env.PROVIDER_URL);
   return {
     props: {
       providerUrl,

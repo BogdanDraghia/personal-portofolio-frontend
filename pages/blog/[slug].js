@@ -22,7 +22,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const article = await axios.get(
     `${process.env.BACKEND_URL}/api/articles?filters[slug][$eq]=${slug}`
   );
-  console.log(article.data.data[0].attributes);
   const contentMDX = await serialize(article.data.data[0].attributes.content);
   return {
     props: {
@@ -38,7 +37,6 @@ const PostPage = ({
   backendUrl,
   article: { title, content, thumbnailUrl },
 }) => {
-  console.log(backendUrl);
   return (
     <div className={style.centerSection}>
       <BlogPage

@@ -53,7 +53,6 @@ export default BlogContainer;
 
 export const getStaticProps = async () => {
   const res = await axios.get(process.env.BACKEND_URL + "/api/articles");
-  console.log(res.data.data);
   const posts = res.data.data;
   return {
     props: {

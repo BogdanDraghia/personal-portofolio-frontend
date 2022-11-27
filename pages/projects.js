@@ -31,8 +31,6 @@ const Projects = ({ projects, categories, envUrls }) => {
     );
   };
   const onChangeFilter = (dataElem) => {
-    console.log(dataElem);
-    console.log(activeFilter);
     const index = activeFilter.findIndex((name) => name === dataElem);
     if (index !== -1) {
       setActiveFilter([
@@ -45,7 +43,6 @@ const Projects = ({ projects, categories, envUrls }) => {
   };
   const filterOpt = projects
     .filter((project) => {
-      console.log(project);
       if (activeFilter.length === 0) return project;
       if (
         activeFilter.some((val) =>
@@ -130,7 +127,6 @@ const Tag = ({ data }) => {
   );
 };
 const ProjectItem = ({ data, urls }) => {
-  console.log(urls);
   return (
     <motion.div
       initial={{ opacity: 0 }}

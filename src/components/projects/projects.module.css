@@ -90,10 +90,13 @@
 }
 
 .projectItemPhoto {
-  border-radius: var(--border2);
   overflow: hidden;
-
+  border-radius: var(--border2);
+  position: relative;
+  width: 100%;
+  max-width: 360px;
   height: 100%;
+  display: flex;
 }
 
 .projectItemPhoto > img {

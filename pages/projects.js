@@ -137,8 +137,9 @@ const ProjectItem = ({ data, urls }) => {
       <div className={style.projectItemPhoto}>
         <img
           src={`${urls.provider}${data.attributes.image}`}
-          width="350"
-          height="350"
+          width="1000"
+          height="1000"
+          sizes='100vw'
           alt="profile"
         />
       </div>

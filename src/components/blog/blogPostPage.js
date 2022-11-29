@@ -1,8 +1,7 @@
 import BlogPhotoFullSize from "./blogPhoto";
 import style from "./blogpost.module.css";
-import Test from "./TestElement";
 
-const blogPage = ({ backendUrl, title, content, thumbnailUrl }) => {
+const blogPage = ({ backendUrl, title, content, thumbnailUrl, children }) => {
   return (
     <div className={style.containerBlogPost}>
       <div className={style.imageBlogPost}>
@@ -12,12 +11,12 @@ const blogPage = ({ backendUrl, title, content, thumbnailUrl }) => {
         />
       </div>
       <div className={style.detailsBlogPost}>
-        <div className={style.infoBlogPost}>
+        {/* <div className={style.infoBlogPost}>
           <p>Lorem ipsum,10 minute read</p>
-        </div>
+        </div> */}
       </div>
       <h1>{title}</h1>
-      <div>{content}</div>
+      <div>{children}</div>
     </div>
   );
 };

@@ -1,6 +1,5 @@
 import style from "../src/components/blog/blog.module.css";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import axios from "axios";
 
 const BlogItem = (props) => {

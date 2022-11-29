@@ -45,21 +45,27 @@
   flex-direction: column;
 }
 .blogItemContent>h3{
+  margin: 15px 0px;
   line-height: 1.325; 
   min-height: 2.25em; 
   font-weight: 600;
-  margin: 0;
   font-size: 28px;
 }
 .blogItemImage{
-  margin-bottom: 1.5rem;
   background-color: var(--accent);
   overflow: hidden;
   border-radius: 10px;
   height: 320px;
   position: relative;
 }
-
+.blogphoto{
+  height: 300px;
+}
+.blogphoto>img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .blogItemImage>img{
   object-fit: cover;
   width: 100%;

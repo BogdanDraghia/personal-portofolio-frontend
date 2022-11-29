@@ -2,7 +2,7 @@ import style from "../src/components/projects/projects.module.css";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
+import Image from "next/image";
 import axios from "axios";
 
 const Projects = ({ projects, categories, envUrls }) => {
@@ -90,8 +90,10 @@ const Projects = ({ projects, categories, envUrls }) => {
               }}
               className={style.resetButtonContainer}
             >
-              <img
+              <Image
                 width="50px"
+                loading="eager"
+                placeholder="blur"
                 height="50px"
                 src={"/images/refresh.svg"}
                 alt="refresh"
@@ -135,12 +137,13 @@ const ProjectItem = ({ data, urls }) => {
       className={style.projectItem}
     >
       <div className={style.projectItemPhoto}>
-        <img
+        <Image
+          className={style.projectItemPhotoImage}
           src={`${urls.provider}${data.attributes.image}`}
-          width="1000"
-          height="1000"
-          sizes='100vw'
+          layout="fill"
+          placeholder="blur"
           alt="profile"
+
         />
       </div>
       <div className={style.projectItemInfo}>

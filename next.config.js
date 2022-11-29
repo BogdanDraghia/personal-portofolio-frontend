@@ -1,4 +1,7 @@
-module.exports = {
+const withExportImages = require('next-export-optimize-images')
+
+module.exports = withExportImages({
+  reactStrictMode: true,
   images: {
     domains: [
       "www.bogdandraghia.com",
@@ -6,4 +9,4 @@ module.exports = {
       "s3-provider-strapi-portofolio.s3.eu-west-3.amazonaws.com",
     ],
   },
-};
+});

@@ -1,6 +1,6 @@
 import style from "./hero.module.css";
 import Link from "next/link";
-
+import Image from "next/image";
 // ICONS
 import Cv from "../../props/icons/cv";
 import Github from "../../props/icons/github";
@@ -37,12 +37,14 @@ const Hero = () => {
       <div className={style.contentRight}>
         <div className={style.subPhotoSection}>
           <div className={style.imageContainer}>
-            <img
+            <Image
               src={"/profile.jpg"}
               alt="bogdandraghia"
               width="100%"
               height="100%"
-              layout="responsive"
+              loading="eager"
+              placeholder="blur"
+
             />
           </div>
           <div className={style.IconShortcutContainer}>

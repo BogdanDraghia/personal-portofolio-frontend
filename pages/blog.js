@@ -1,17 +1,18 @@
 import style from "../src/components/blog/blog.module.css";
 import Link from "next/link";
 import axios from "axios";
-
+import Image from "next/image";
 const BlogItem = (props) => {
   return (
     <Link href={"/blog/" + props.attributes.slug} passHref>
       <div className={style.blogItem}>
         <div className={style.blogItemContent}>
           <div className={style.blogItemImage}>
-            <img
+            <Image
               src={props.attributes.thumbnailUrl}
               width="400px"
               height="300px"
+              placeholder="blur"
               alt="imageblog"
             />
           </div>

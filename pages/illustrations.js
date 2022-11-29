@@ -2,7 +2,8 @@ import style from "../src/components/illustrations/illustrations.module.css";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
-
+import Image from "next/image";
+import Head from "next/head";
 const IllustrationItem = (props) => {
   return (
     <motion.div
@@ -20,10 +21,13 @@ const IllustrationItem = (props) => {
         <div></div>
         <div></div>
       </div>
-      <img
+      <Image
         src={`${props.providerUrl}${props.image}`}
         width="300px"
-        height="300"
+        loading="lazy"
+        layout="responsive"
+        height="300px"
+        placeholder="blur"
         alt="profile"
       />
     </motion.div>
@@ -89,10 +93,12 @@ const IllustrationOverlay = (props) => {
                   </motion.div>
                 )}
               </AnimatePresence>
-              <img
+              <Image
                 src={`${props.providerUrl}${props.data.attributes.image}`}
+                layout="responsive"
                 width="400px"
                 height="400px"
+                placeholder="blur"
                 alt="profile"
               />
             </div>
@@ -143,6 +149,11 @@ const Illustrations = ({ illustrations, providerUrl }) => {
 
   return (
     <div className={style.center}>
+      <Head>
+        <title>Illustrations</title>
+        <meta name="description" content="Personal portofolio" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={style.IllustrationsGrid}>
         {illustrations.map((data, index) => (
           <IllustrationItem

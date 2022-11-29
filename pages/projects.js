@@ -1,7 +1,7 @@
 import style from "../src/components/projects/projects.module.css";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import axios from "axios";
 
@@ -130,7 +130,7 @@ const Tag = ({ data }) => {
 };
 const ProjectItem = ({ data, urls }) => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -170,7 +170,7 @@ const ProjectItem = ({ data, urls }) => {
           <div className={style.buttonProjects}>Source</div>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };
 export async function getStaticProps() {

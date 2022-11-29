@@ -1,12 +1,12 @@
 import style from "../src/components/illustrations/illustrations.module.css";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import axios from "axios";
 import Image from "next/image";
 import Head from "next/head";
 const IllustrationItem = (props) => {
   return (
-    <motion.div
+    <m.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -30,7 +30,7 @@ const IllustrationItem = (props) => {
         placeholder="blur"
         alt="profile"
       />
-    </motion.div>
+    </m.div>
   );
 };
 
@@ -54,7 +54,7 @@ const IllustrationOverlay = (props) => {
   return (
     <AnimatePresence>
       {props.render && (
-        <motion.div
+        <m.div
           initial={{ opacity: 0, zIndex: 3 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
@@ -77,7 +77,7 @@ const IllustrationOverlay = (props) => {
             <div className={style.imageOverlay}>
               <AnimatePresence>
                 {copynotification && (
-                  <motion.div
+                  <m.div
                     initial={{ opacity: 0 }}
                     animate={{ y: -10, opacity: 1 }}
                     exit={{ opacity: 0 }}
@@ -90,7 +90,7 @@ const IllustrationOverlay = (props) => {
                     <div className={style.notification}>
                       Color copied to the clipboard !
                     </div>
-                  </motion.div>
+                  </m.div>
                 )}
               </AnimatePresence>
               <Image
@@ -104,7 +104,7 @@ const IllustrationOverlay = (props) => {
             </div>
             <div className={style.palette}>
               {props.data.attributes.pallete.map((item, index) => (
-                <motion.div
+                <m.div
                   className={style.paletteBox}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -118,11 +118,11 @@ const IllustrationOverlay = (props) => {
                     style={{ backgroundColor: item }}
                   ></div>
                   <div className={style.colorCode}>{item}</div>
-                </motion.div>
+                </m.div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );

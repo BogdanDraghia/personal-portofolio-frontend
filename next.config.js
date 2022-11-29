@@ -1,6 +1,10 @@
+const withBundleAnalyzer = require("@next/bundle-analyzer")({
+  enabled: process.env.ANALYZE === "true",
+})
+
 const withExportImages = require('next-export-optimize-images')
 
-module.exports = withExportImages({
+module.exports = withBundleAnalyzer(withExportImages({
   reactStrictMode: true,
   images: {
     domains: [
@@ -9,4 +13,4 @@ module.exports = withExportImages({
       "s3-provider-strapi-portofolio.s3.eu-west-3.amazonaws.com",
     ],
   },
-});
+}));

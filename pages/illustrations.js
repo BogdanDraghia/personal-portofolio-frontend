@@ -1,6 +1,6 @@
 import style from "../src/components/illustrations/illustrations.module.css";
 import { useState, useEffect } from "react";
-import { m, AnimatePresence, LazyMotion, domAnimation, domMax } from "framer-motion";
+import { m, AnimatePresence, LazyMotion, domMax } from "framer-motion";
 import axios from "axios";
 import Image from "next/image";
 import Head from "next/head";

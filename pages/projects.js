@@ -1,7 +1,7 @@
 import style from "../src/components/projects/projects.module.css";
 
 import { useState } from "react";
-import { m, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence, LazyMotion, domMax } from "framer-motion";
 import Image from "next/image";
 import axios from "axios";
 
@@ -130,47 +130,49 @@ const Tag = ({ data }) => {
 };
 const ProjectItem = ({ data, urls }) => {
   return (
-    <m.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className={style.projectItem}
-    >
-      <div className={style.projectItemPhoto}>
-        <Image
-          className={style.projectItemPhotoImage}
-          src={`${urls.provider}${data.attributes.image}`}
-          layout="fill"
-          placeholder="blur"
-          alt="profile"
+    <LazyMotion features={domMax}>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className={style.projectItem}
+      >
+        <div className={style.projectItemPhoto}>
+          <Image
+            className={style.projectItemPhotoImage}
+            src={`${urls.provider}${data.attributes.image}`}
+            layout="fill"
+            placeholder="blur"
+            alt="profile"
 
-        />
-      </div>
-      <div className={style.projectItemInfo}>
-        <div className={style.pItemTittle}>
-          <h2>{data.attributes.title}</h2>
+          />
+        </div>
+        <div className={style.projectItemInfo}>
+          <div className={style.pItemTittle}>
+            <h2>{data.attributes.title}</h2>
 
-          {data.attributes.content.length > 100 ? (
-            <p>
-              {data.attributes.content.slice(
-                0,
-                data.attributes.content.slice(0, 120).lastIndexOf(" ")
-              ) + "..."}
-            </p>
-          ) : (
-            <p>{data.attributes.content}</p>
-          )}
+            {data.attributes.content.length > 100 ? (
+              <p>
+                {data.attributes.content.slice(
+                  0,
+                  data.attributes.content.slice(0, 120).lastIndexOf(" ")
+                ) + "..."}
+              </p>
+            ) : (
+              <p>{data.attributes.content}</p>
+            )}
+          </div>
+          <div className={style.pItemTags}>
+            {data.attributes.categories.data.map((data, index) => (
+              <Tag data={data} key={index} />
+            ))}
+          </div>
+          <div className={style.pItemLinks}>
+            <div className={style.buttonProjects}>Source</div>
+          </div>
         </div>
-        <div className={style.pItemTags}>
-          {data.attributes.categories.data.map((data, index) => (
-            <Tag data={data} key={index} />
-          ))}
-        </div>
-        <div className={style.pItemLinks}>
-          <div className={style.buttonProjects}>Source</div>
-        </div>
-      </div>
-    </m.div>
+      </m.div>
+    </LazyMotion>
   );
 };
 export async function getStaticProps() {

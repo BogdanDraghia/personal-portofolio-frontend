@@ -51,22 +51,34 @@
   font-weight: 600;
   font-size: 28px;
 }
-.blogItemImage{
+.blogItemImageWrapper{
   background-color: var(--accent);
   overflow: hidden;
   border-radius: 10px;
   height: 320px;
   position: relative;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
-.blogphoto{
+
+.blogPhoto{
   height: 300px;
+  position: relative;
+  width: 100%;
 }
-.blogphoto>img{
+.blogPhotoImage{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.blogItemImage>img{
+.blogItemImage{
+  width: 100%;
+  height: 100%;
+  position: relative !important;
+  object-fit: cover; 
+}
+.blogItemImageWrapper>img{
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -83,7 +95,7 @@
     max-width: none;
     width: 100%;
   }
-  .blogItemImage{
+  .blogItemImageWrapper{
     height: 280px;
   }
 }

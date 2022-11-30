@@ -1,9 +1,10 @@
 import style from "../src/components/projects/projects.module.css";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
+import { m, AnimatePresence, LazyMotion, domMax } from "framer-motion";
+import Image from "next/image";
 import axios from "axios";
+import Link from "next/link";
 
 const Projects = ({ projects, categories, envUrls }) => {
   const [activeFilter, setActiveFilter] = useState([]);
@@ -90,8 +91,10 @@ const Projects = ({ projects, categories, envUrls }) => {
               }}
               className={style.resetButtonContainer}
             >
-              <img
+              <Image
                 width="50px"
+                loading="eager"
+                placeholder="blur"
                 height="50px"
                 src={"/images/refresh.svg"}
                 alt="refresh"
@@ -127,47 +130,53 @@ const Tag = ({ data }) => {
   );
 };
 const ProjectItem = ({ data, urls }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className={style.projectItem}
-    >
-      <div className={style.projectItemPhoto}>
-        <img
-          src={`${urls.provider}${data.attributes.image}`}
-          width="1000"
-          height="1000"
-          sizes='100vw'
-          alt="profile"
-        />
-      </div>
-      <div className={style.projectItemInfo}>
-        <div className={style.pItemTittle}>
-          <h2>{data.attributes.title}</h2>
 
-          {data.attributes.content.length > 100 ? (
-            <p>
-              {data.attributes.content.slice(
-                0,
-                data.attributes.content.slice(0, 120).lastIndexOf(" ")
-              ) + "..."}
-            </p>
-          ) : (
-            <p>{data.attributes.content}</p>
-          )}
+  return (
+    <LazyMotion features={domMax}>
+      <m.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className={style.projectItem}
+      >
+        <div className={style.projectItemPhoto}>
+          <Image
+            className={style.projectItemPhotoImage}
+            src={`${urls.provider}${data.attributes.image}`}
+            layout="fill"
+            placeholder="blur"
+            alt="profile"
+
+          />
         </div>
-        <div className={style.pItemTags}>
-          {data.attributes.categories.data.map((data, index) => (
-            <Tag data={data} key={index} />
-          ))}
+        <div className={style.projectItemInfo}>
+          <div className={style.pItemTittle}>
+            <h2>{data.attributes.title}</h2>
+
+            {data.attributes.content.length > 100 ? (
+              <p>
+                {data.attributes.content.slice(
+                  0,
+                  data.attributes.content.slice(0, 120).lastIndexOf(" ")
+                ) + "..."}
+              </p>
+            ) : (
+              <p>{data.attributes.content}</p>
+            )}
+          </div>
+          <div className={style.pItemTags}>
+            {data.attributes.categories.data.map((data, index) => (
+              <Tag data={data} key={index} />
+            ))}
+          </div>
+          <div className={style.pItemLinks}>
+            <a target="_blank" href={data.attributes.source} rel="noreferrer">
+              <div className={style.buttonProjects}>Source</div>
+            </a>
+          </div>
         </div>
-        <div className={style.pItemLinks}>
-          <div className={style.buttonProjects}>Source</div>
-        </div>
-      </div>
-    </motion.div>
+      </m.div>
+    </LazyMotion>
   );
 };
 export async function getStaticProps() {

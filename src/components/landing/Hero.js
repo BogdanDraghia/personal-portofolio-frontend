@@ -1,6 +1,6 @@
 import style from "./hero.module.css";
 import Link from "next/link";
-
+import Image from "next/image";
 // ICONS
 import Cv from "../../props/icons/cv";
 import Github from "../../props/icons/github";
@@ -37,19 +37,20 @@ const Hero = () => {
       <div className={style.contentRight}>
         <div className={style.subPhotoSection}>
           <div className={style.imageContainer}>
-            <img
+            <Image
+              className={style.ImageHero}
               src={"/profile.jpg"}
               alt="bogdandraghia"
-              width="100%"
-              height="100%"
-              layout="responsive"
+              layout='fill'
+              placeholder="blur"
+
             />
           </div>
           <div className={style.IconShortcutContainer}>
             <SvgIconHelper
               name="cv"
               icon={<Cv width="60px" height="60px" />}
-              pass={"/cv/CV-BogdanCristianDraghia.pdf"}
+              pass={"/cv/Bogdan-Cristian-Draghia-Resume.pdf"}
             />
             <SvgIconHelper
               name="Linkedin"

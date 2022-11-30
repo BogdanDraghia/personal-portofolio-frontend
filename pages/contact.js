@@ -21,21 +21,22 @@ const Contact = () => {
               <SvgIconHelper
                 name="linkedin"
                 icon={<LinkedinComponent />}
-                pass={"https://github.com/bogdandraghia"}
-              />
-            </div>
-            <div className={style.iconComponent}>
-              <SvgIconHelper
-                name="twitter"
-                icon={<Email />}
-                pass={"https://github.com/bogdandraghia"}
+                pass={"https://www.linkedin.com/in/bogdandraghia"}
               />
             </div>
             <div className={style.iconComponent}>
               <SvgIconHelper
                 name="email"
+                icon={<Email />}
+                pass={"mailto:bgd.draghia@gmail.com"}
+              />
+            </div>
+            <div className={style.iconComponent}>
+              <SvgIconHelper
+                name="twitter"
                 icon={<Twitter />}
-                pass={"https://github.com/bogdandraghia"}
+                pass={"https://twitter.com/DraghiaBogdan"}
+
               />
             </div>
           </div>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { m, AnimatePresence, LazyMotion, domMax } from "framer-motion";
 import Image from "next/image";
 import axios from "axios";
+import Link from "next/link";
 
 const Projects = ({ projects, categories, envUrls }) => {
   const [activeFilter, setActiveFilter] = useState([]);
@@ -129,6 +130,7 @@ const Tag = ({ data }) => {
   );
 };
 const ProjectItem = ({ data, urls }) => {
+
   return (
     <LazyMotion features={domMax}>
       <m.div
@@ -168,7 +170,9 @@ const ProjectItem = ({ data, urls }) => {
             ))}
           </div>
           <div className={style.pItemLinks}>
-            <div className={style.buttonProjects}>Source</div>
+            <a target="_blank" href={data.attributes.source} rel="noreferrer">
+              <div className={style.buttonProjects}>Source</div>
+            </a>
           </div>
         </div>
       </m.div>

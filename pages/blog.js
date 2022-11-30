@@ -7,11 +7,11 @@ const BlogItem = (props) => {
     <Link href={"/blog/" + props.attributes.slug} passHref>
       <div className={style.blogItem}>
         <div className={style.blogItemContent}>
-          <div className={style.blogItemImage}>
+          <div className={style.blogItemImageWrapper}>
             <Image
+              className={style.blogItemImage}
               src={props.attributes.thumbnailUrl}
-              width="400px"
-              height="300px"
+              layout='fill'
               placeholder="blur"
               alt="imageblog"
             />

@@ -38,11 +38,10 @@ const Hero = () => {
         <div className={style.subPhotoSection}>
           <div className={style.imageContainer}>
             <Image
+              className={style.ImageHero}
               src={"/profile.jpg"}
               alt="bogdandraghia"
-              width="100%"
-              height="100%"
-              loading="eager"
+              layout='fill'
               placeholder="blur"
 
             />

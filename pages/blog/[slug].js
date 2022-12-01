@@ -4,7 +4,8 @@ import { serialize } from "next-mdx-remote/serialize";
 import { MDXRemote } from 'next-mdx-remote'
 import BlogPage from "../../src/components/blog/blogPostPage";
 import rehypeHighlight from "rehype-highlight"
-import { CodeBlock } from "../../src/components/blog/components";
+
+import { CodeBlock, HyperLink } from "../../src/components/blog/components";
 // import '../../src/components/blog/components/github-highlight.css'
 
 // import "highlight.js/styles/github-dark.css";
@@ -50,7 +51,7 @@ const PostPage = ({
         backendUrl={backendUrl}
         thumbnailUrl={thumbnailUrl}
       >
-        <MDXRemote {...contentMDX} components={{ blockquote: CodeBlock }} />
+        <MDXRemote {...contentMDX} components={{ blockquote: CodeBlock, a: HyperLink }} />
       </BlogPage>
     </div>
   );

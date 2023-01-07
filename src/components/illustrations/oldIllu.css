@@ -20,20 +20,7 @@
 
   opacity: 0.5;
 }
-.imagetest {
-  position: relative;
-  margin-top: 40px;
-  width: 100%;
-  max-width: 500px;
-  padding: 40px 50px;
-  background-color: white;
-  border-radius: var(--border2);
-}
-.imagetest > img {
-  object-fit: contain;
-  border-radius: var(--border2);
-  width: 100%;
-}
+
 .palette {
   margin-top: 20px;
   display: flex;

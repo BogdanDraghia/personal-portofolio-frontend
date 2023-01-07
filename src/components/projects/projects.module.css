@@ -31,6 +31,7 @@
 }
 
 .resetButtonContainer {
+  cursor: pointer;
   padding: 5px;
   width: 40px;
   height: 40px;

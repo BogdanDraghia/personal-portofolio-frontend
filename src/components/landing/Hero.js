@@ -50,7 +50,7 @@ const Hero = () => {
             <SvgIconHelper
               name="cv"
               icon={<Cv width="60px" height="60px" />}
-              pass={"/cv/Bogdan-Cristian-Draghia-Resume.pdf"}
+              pass={"https://publicviewportfolio.s3.eu-west-3.amazonaws.com/Bogdan-Cristian-Draghia-Resume.pdf"}
             />
             <SvgIconHelper
               name="Linkedin"

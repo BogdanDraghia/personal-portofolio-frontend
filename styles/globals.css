@@ -20,6 +20,8 @@
   --dark-grey1: #cfd5dd;
   --dark-grey2: #8796ab;
   --dark-grey3: #323b48;
+  --dark-grey4:#3a3a3a;
+  --dark-grey5:#0d1117;
   /* Others */
   --border1: 20px;
   --border2: 10px;
@@ -28,6 +30,7 @@
 }
 
 .lightmode {
+  --codeBlock:var(--dark-grey5);
   --siteBackground: var(--site-background-light);
   --moon-color: #ffff;
   --h1-text-color: var(--grey6);
@@ -40,6 +43,7 @@
 }
 
 .darkmode {
+  --codeBlock:var(--dark-grey4);
   --siteBackground: var(--site-background-dark);
   --moon-color: #f7ec87;
   --border-input: none;
@@ -129,7 +133,7 @@ code.hljs {
 .hljs {
   border-radius: var(--border2);
   color: #c9d1d9;
-  background: #0d1117
+  background: var(--codeBlock)
 }
 
 .hljs-doctag,
